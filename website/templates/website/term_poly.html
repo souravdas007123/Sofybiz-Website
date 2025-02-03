@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'website/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/media_768_1024.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'website/css/media_320_767.css' %}" as="style">
+    <title>Term and Condition</title>
+</head>
+
+<body>
+    <div class="tern">
+        <div class="term_condition">
+            <h3 class='main_term'>Terms and Conditions</h3>
+            <div class="Condition term_block">
+                <h3>Condition Use</h3>
+                {% for term in tp %}
+                <p>{{term.condition_use}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Privacy term_block">
+                <h3>Privacy Policy</h3>
+                {% for term in tp %}
+                <p>{{term.privacy_policy}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Age term_block">
+                <h3>Age Restriction</h3>
+                {% for term in tp %}
+                <p>{{term.age_restriction}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Intellectual term_block">
+                <h3>Intellectual Property</h3>
+                {% for term in tp %}
+                <p>{{term.intellectual_propertye}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Accounts term_block">
+                <h3>User Accounts</h3>
+                {% for term in tp %}
+                <p>{{term.user_accounts}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Disputes term_block">
+                <h3>Disputes</h3>
+                {% for term in tp %}
+                <p>{{term.disputes}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Indemnification term_block">
+                <h3>Indemnification</h3>
+                {% for term in tp %}
+                <p>{{term.indemnification}}</p>
+                {% endfor  %}
+            </div>
+            <div class="Limitation term_block">
+                <h3>Limitation on Liability</h3>
+                {% for term in tp %}
+                <p>{{term.limitation_on_liability}}</p>
+                {% endfor  %}
+            </div>
+        </div>
+        </div>
+</body>
+
+</html>

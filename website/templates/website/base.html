@@ -1,0 +1,53 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Put your description here.">
+
+    <link rel="icon" href="{% static 'website/img/favicon.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'website/css/media_320_767.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'website/css/media_768_1024.css' %}" as="style">
+
+    {% block title %}{% endblock title %}
+    <title>Sofybiz Solution Pvt Ltd</title>
+
+</head>
+
+<body>
+   
+    <!------------------------------- landing part -------------------------------->
+    {% block landing %}{% endblock landing %}
+    <!--------------------------------- contact us part ---------------------------->
+    {% block contact %}{% endblock contact %}
+    <!-------------------------------- services part ---------------------------->
+    {% block service %}{% endblock service %}
+    <!--------------------------------- Our company in numbers part ---------------------------->
+    {% block company_in_number %}{% endblock company_in_number %}
+    <!-------------------------------------- project part ---------------------------->
+    {% block project %}{% endblock project %}
+    <!--------------------------------- gallery part ---------------------------->
+    {% block gallery %}{% endblock gallery %}
+    <!-------------------------------- our teams part ---------------------------->
+    {% block teams_member %}{% endblock teams_member %}
+    <!------------------------------------- textimorial part ---------------------------->
+    {% block textimorial %}{% endblock textimorial %}
+    <!---------------------------------- achievements part ---------------------------->
+    {% block achievment %}{% endblock achievment %}
+    <!------------------------------------- about us part -------------------------------->
+    {% block about %} {% endblock about %}
+    <!------------------------------------- footer part --------------------------------->
+    {% block footer %}{% endblock footer %}
+    <!------------------------------------- term and policy part --------------------------------->
+    {% block term %}{% endblock term %}
+   
+    <script src="{% static 'website/js/custom.js' %}"></script>
+
+
+</body>
+
+</html>

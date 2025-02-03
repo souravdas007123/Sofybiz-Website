@@ -1,0 +1,913 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Put your description here.">
+
+    <link rel="icon" href="{% static 'website/img/favicon.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'website/css/media_320_767.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'website/css/media_768_1024.css' %}" as="style">
+
+    <title>Sofybiz Solution Pvt Ltd</title>
+
+</head>
+
+<body>
+    
+    <!------------------------------- landing part -------------------------------->
+    <div class="landing" id="landing">
+        <div class="landing_row">
+            <div class="landing_wrapper">
+                <div class="left_landing" id="left">
+                    {% for profiles in profile %}
+                    <div class="logocont">
+                        <img src="{{profiles.company_logo.url}}" alt="" srcset="">
+                    </div>
+                    <div class="landing_logo">
+                        <div class="logo">
+                            <h4>{{profiles.company_name}}</h4>
+                        </div>
+                        {% endfor %}
+                        <div class="menu">
+                            <span class="bar_one"></span>
+                            <span class="bar_two"></span>
+                            <span class="bar_three"></span>
+                        </div>
+                    </div>
+                    <div class="landing_heading">
+                        {% for section_heading_paras in section_heading_para %}
+                        <h1>{{section_heading_paras.landing_heading}}</h1>
+                        {% endfor %}
+                    </div>
+                    <div class="landing_data">
+                        <div class="landing_para">
+
+                            <p class="lscreen" style="display:lblock;">MODERN ENERGY EFFICIENT HOUSES FROM 150 SQ. M.
+                            </p>
+                            {% comment %} {% for soceity_works in soceity_work %}
+                            <p class="screen" style="display:block;">{{soceity_work_counts.work_description}}</p>
+                            {% endfor %} {% endcomment %}
+                            {% comment %} <p class="screen" style="display:none;">{{soceity_works.work_description}}</p> {% endcomment %}
+
+                        </div>
+                    </div>
+                    <div class="landing_contact">
+                        <a href="#contactus" class="contact_landing">CONTACT US</a>
+                    </div>
+                    <div class="landing_button">
+                        <div class="button_landing">
+                            <div class="area_btn" id="nextBtn">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                            <div class="area_btn" id="prevBtn">
+                                <i class="fa-solid fa-arrow-right fa-rotate-180"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_landing" id="right">
+                    <div class="right_landing_img">
+                        <img src="{% static 'website/img/landing.webp' %}" alt="Image1" class="screen"
+                            style="display:block;">
+                        {% for soceity_works in soceity_work %}
+                        <img src="{{soceity_works.company_photo.url}}" alt="Image1" class="screen"
+                            style="display:none;">
+                        {% endfor %}
+                    </div>
+                    <div class="right_strap">
+                        <div class="strap_left">
+                            {% for soceity_work_counts in soceity_work_count %}
+                            <h2>{{soceity_work_counts.id}}+ WORKS</h2>
+                            {% endfor %}
+                        </div>
+                            <div class="strap_right">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------- contact us part ---------------------------->
+    <section class="contact" id="contactus">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.contact_para}} </p>
+                <h2>{{section_heading_paras.contact_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="contact_box wrraper_padding">
+                <div class="left_contact" id="section_1">
+                    <div class="carousel">
+                        <a href="" class="link">
+                            <div class="contact_left_data">
+                                <div class="contact_icon">
+                                    <i class="fa-solid fa-mobile-screen-button icon_contact"></i>
+                                    <!--<img src="{% static 'website/img/smartphone.png' %}" alt="phone" >-->
+                                </div>
+                                <div class="contact_heading">
+                                    <h3>CONTACTS</h3>
+                                    {% for profiles in profile %}
+                                    <p>(+91) {{profiles.number}}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/sofybizsolution/" class="link">
+                            <div class="contact_left_data">
+                                <div class="contact_icon">
+                                    <i class="fa-solid fa-envelope icon_contact"></i>
+                                </div>
+                                <div class="contact_heading">
+                                    <h3>E-MAIL</h3>
+                                    {% for profiles in profile %}
+                                    <p>{{profiles.email}}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://maps.app.goo.gl/oKqquyDLbDDw1pGv6" class="link">
+                            <div class="contact_left_data">
+                                <div class="contact_icon">
+                                    <i class="fa-solid fa-location-dot icon_contact"></i>
+                                </div>
+                                <div class="contact_heading">
+                                    <h3>ADDRESS</h3>
+                                    {% for profiles in profile %}
+                                    <p>{{profiles.address}}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="right_contact" id="section_2">
+                    <div class="right_contact_form">
+                        <!-- form area -->
+                        <div class="form_box">
+                            <div class="form_value">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                    <label for="{{field.id_for_label}}" class="label_field">{{field.label}}</label><br>
+                                    <input type="{{field.field.widget.input_type}}" name="{{field.name}}" required
+                                        id="{{field.id_for_label}}" value="{{field.value|default:''}}"
+                                        class="input_field"><br><br>
+                                    {% endfor %}
+                                    <div class="button">
+                                        <input type="submit" class="send_btn" value="Send">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------- services part ---------------------------->
+    <section class="service" id="service">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.service_para}} </p>
+                <h2><span class="heading_bold">{{section_heading_paras.service_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="service_wrapper wrraper_padding">
+                <div class="service_upper">
+                    <div class="ser">
+                        <h3>CONSTRUCTION</h3>
+                        <span></span>
+                        <div class="service_point">
+                            <ul>
+                                <li>Casting</li>
+                                <li>Coloum,Beaum</li>
+                                <li>Slab Casting</li>
+                                <li>Stair</li>
+                                <li>Shuttering</li>
+                                <li>Interior Wall</li>
+                                <li>Exterior Wall</li>
+                                <li>Roof</li>
+                                <li>Ceiling</li>
+                                <li>Tiles,Marble</li>
+
+                            </ul>
+                        </div>
+                        <a aria-label="construction" href="{% url 'constructionservice' %}" title="construction">
+                            <div class="service_btn">
+                                <p>Construction Services</p>
+                                <i class="fa-solid fa-arrow-right fa-beat service_icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ser li">
+                        <h3>INTERIOR DESIGN</h3>
+                        <span></span>
+                        <div class="service_point">
+                            <ul>
+                                <li>False Ceiling</li>
+                                <li>Tiles,Marble</li>
+                                <li>Wordrop</li>
+                                <li>Texture Paint</li>
+                                <li>Glass Work</li>
+                                <li>Frosted Stickering</li>
+                                <li>Wall panneling</li>
+                                <li>Banking ManagerRoom</li>
+                                <li>Banking Cashcounter</li>
+                                <li>Banking Work Station</li>
+                            </ul>
+                        </div>
+                        <a aria-label="interior" href="{% url 'interiorservice' %}" title="interior">
+                            <div class="service_btn">
+                                <p>Interior Solutions</p>
+                                <i class="fa-solid fa-arrow-right fa-beat service_icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ser">
+                        <h3>ELECTRIC WORK</h3>
+                        <span></span>
+                        <div class="service_point">
+                            <ul>
+                                <li>Wall Lighing</li>
+                                <li>Chandelier</li>
+                                <li>Pendant</li>
+                                <li>Floor Lamp</li>
+                                <li>Ceiling</li>
+                                <li>Garden</li>
+                                <li>Profiling</li>
+                                <li>Pannels Light</li>
+                                <li>Strip Light</li>
+                                <li>Pixel Light</li>
+                            </ul>
+                        </div>
+                        <a aria-label="lighting" href="{% url 'lightingservice' %}" title="lighting">
+                            <div class="service_btn">
+                                <p>Electric Work</p>
+                                <i class="fa-solid fa-arrow-right fa-beat service_icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------- Our company in numbers part ---------------------------->
+    <section class="company_in_number" id="company_in_number">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.milestone_para}}</p>
+                <h2><span class="heading_bold">{{section_heading_paras.milestone_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="company_wrapper wrraper_padding">
+                <div class="number_wrapper">
+                    <div class="number">
+                        <div class="numaric">
+                            {% for soceity_work_counts in soceity_work_count %}
+                            <h3 class="count" data-target="{{soceity_work_counts.id}}">0</h3>
+                            {% endfor %}
+                        </div>
+                        <div class="alphabate">
+                            <p>Implemented projects</p>
+                        </div>
+                    </div>
+                    <div class="number">
+                        <div class="numaric">
+                            {% for employees in employee %}
+                            <h3 class="count" data-target="{{employees.id}}">0</h3>
+                            {% endfor %}
+                        </div>
+                        <div class="alphabate">
+                            <p class="alphabate_para">Staff members</p>
+                        </div>
+                    </div>
+                    <div class="number">
+                        <div class="numaric">
+                            {% for profiles in profile %}
+                            <h3 class="count" data-target="{{profiles.years_of_market}}">0</h3>
+                            {% endfor %}
+                        </div>
+                        <div class="alphabate">
+                            <p>Years on the market</p>
+                        </div>
+                    </div>
+                    <div class="number">
+                        <div class="numaric">
+                            {% for employees in employee %}
+                            <h3 class="count" data-target="{{employees.id}}">0</h3>
+                            {% endfor %}
+                        </div>
+                        <div class="alphabate">
+                            <p>Qualified Specalist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------- project part ---------------------------->
+    <section class="project" id="project">
+        <div class="row">
+            <div class="section_heading">
+                <div class="project_heading_wrapper ">
+                    <div class="project_heading">
+                        {% for section_heading_paras in section_heading_para %}
+                        <p class="section_sub_hreading">{{section_heading_paras.project_para}}</p>
+                        <h2>{{section_heading_paras.project_heading}}</h2>
+                        {% endfor %}
+                    </div>
+                    <div class="project_paragraph">
+                        <p>Discover our featured projects, showcasing our expertise and dedication in delivering
+                            impactful solutions that drive success and exceed client expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border"></div>
+            <div class="project_wrapper wrraper_padding">
+                <div class="project_gallery_data" id="gallery_data">
+                    {% for soceity_work_counts in soceity_work_count %}
+                    <h3 class="project_gallery_data_subhead">{{soceity_work_counts.end_of_work_date}} |
+                        {{soceity_work_counts.work_designation|upper}}</h3>
+                    <h4 class="project_gallery_data_head">{{soceity_work_counts.company_name|capfirst}} ,
+                        {{soceity_work_counts.address|capfirst}} OK</h4>
+                    <p class="project_gallery_data_para">{{soceity_work_counts.work_description}}</p>
+                    {% endfor %}
+                </div>
+                <div class="project_gallery">
+                    <img src="{% static 'website/img/kitchen.webp' %}" alt="project" class="lproject"
+                        style="display:block" ;>
+                    <!-- {% for soceity_works in soceity_work %}
+                    <img src="{{soceity_works.company_photo.url}}" alt="project" class="lproject"
+                        style="display:none" ;>
+                    {% endfor %} -->
+                    <div class="search" id="src">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                    </div>
+                </div>
+                <div class="project_gallery_arrow">
+                    <div class="arrow_left arrow_circle" id="lchange1">
+                        <i class="fa-solid fa-arrow-left fa-lg"></i>
+                    </div>
+                    <div class="arrow_right arrow_circle" id="lchange2">
+                        <i class="fa-solid fa-arrow-right fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------- gallery part ---------------------------->
+    <section class="gallery" id="gallery">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.gallery_para}}</p>
+                <h2><span class="heading_bold">{{section_heading_paras.gallery_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="gallery_wrapper wrraper_padding">
+                {% for gallerys in gallery %}
+                <a href="{% url 'kitchen' %}" class="block box box-1 row-2">
+                    <img src="{{gallerys.kitchen_photo.url}}" alt="kitchen" class="img_1">
+                </a>
+                <a href="{% url 'living' %}" class="block box box-2">
+                    <img src="{{gallerys.livingroom_photo.url}}" alt="livingroom" class="img_1">
+                </a>
+                <a href="{% url 'bedroom' %}" class="block box box-3 row-2">
+                    <img src="{{gallerys.bedroom_photo.url}}" alt="bedroom" class="img_1">
+                </a>
+                <a href="{% url 'washroom' %}" class="block box box-4">
+                    <img src="{{gallerys.washroom_photo.url}}" alt="washroom" class="img_1">
+                </a>
+                <a href="{% url 'drawingroom' %}" class="block box box-5 row-2">
+                    <img src="{{gallerys.drawingroom_photo.url}}" alt="drawingroom" class="img_1">
+                </a>
+                <a href="{% url 'falseceiling' %}" class="block box box-6 row-2">
+                    <img src="{{gallerys.falseceilling_photo.url}}" alt="falseceiling" class="img_1">
+                </a>
+                <a href="{% url 'floor' %}" class="block box box-7">
+                    <img src="{{gallerys.floor_photo.url}}" alt="floor" class="img_1">
+                </a>
+                <a href="{% url 'wallpannel' %}" class="block box box-8">
+                    <img src="{{gallerys.wallpannel_photo.url}}" alt="wallpannel" class="img_1">
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-------------------------------- our teams part ---------------------------->
+    <section class="teams_member" id="teams_member">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.team_para}}</p>
+                <h2>{{section_heading_paras.team_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="teams_member_wrapper wrraper_padding">
+                <div class="team1">
+                    <div class="member_gallery1">
+                        <div class="member_img">
+                            {% for teams in team %}
+                            <img src="{{teams.designer_photo.url}}" alt="ceo" class="member_photos">
+                        </div>
+                        <div class="gallery_name">
+                            <h3>{{teams.designer_name}}</h3>
+                            <p>{{teams.designer_designation}}</p>
+                            {% endfor %}
+                            <div class="member_icon_wrapper">
+                                {% for teams in team %}
+                                <a aria-label="instagram" href='{{teams.designer_instra_link}}'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-instagram "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="facebook" href='{{teams.designer_facebook_link}}'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-facebook-f "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="twitter" href='{{teams.designer_twitter_link}}'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-twitter "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="google" href='{{teams.designer_google_link}}'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-google-plus-g "></i>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="member_gallery1">
+                        <div class="member_img">
+                            {% for teams in team %}
+                            <img src="{{teams.founder_photo.url}}" alt="designer" class="member_photos">
+                        </div>
+                        <div class="gallery_name">
+                            <h3>{{teams.founder_name}}</h3>
+                            <p>{{teams.founder_designation}}</p>
+                            {% endfor %}
+                            <div class="member_icon_wrapper">
+                                {% for teams in team %}
+                                <a aria-label="instagram" href='https://www.instagram.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-instagram "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="facebook" href='https://www.facebook.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-facebook-f "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="twitter" href='https://x.com/?lang=en'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-twitter "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="google" href='https://mail.google.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-google-plus-g "></i>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="team2">
+                    <div class="member_gallery1">
+                        <div class="member_img">
+                            {% for teams in team %}
+                            <img src="{{teams.manager_photo.url}}" alt="manager" class="member_photos">
+                        </div>
+                        <div class="gallery_name">
+                            <h3>{{teams.manager_name}}</h3>
+                            <p>{{teams.manager_designation}}</p>
+                            {% endfor %}
+                            <div class="member_icon_wrapper">
+                                {% for teams in team %}
+                                <a aria-label="instagram" href='https://www.instagram.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-instagram "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="facebook" href='https://www.facebook.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-facebook-f "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="twitter" href='https://x.com/?lang=en'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-twitter "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="google" href='https://mail.google.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-google-plus-g "></i>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member_gallery1">
+                        <div class="member_img">
+                            {% for teams in team %}
+                            <img src="{{teams.engineer_photo.url}}" alt="engeenier" class="member_photos">
+                        </div>
+                        <div class="gallery_name">
+                            <h3>{{teams.engineer_name}}</h3>
+                            <p>{{teams.engineer_designation}}</p>
+                            {% endfor %}
+                            <div class="member_icon_wrapper">
+                                {% for teams in team %}
+                                <a aria-label="instagram" href='https://www.instagram.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-instagram "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="facebook" href='https://www.facebook.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-facebook-f "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="twitter" href='https://x.com/?lang=en'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-twitter "></i>
+                                    </div>
+                                </a>
+                                <a aria-label="google" href='https://mail.google.com/'>
+                                    <div class="member_icon">
+                                        <i class="fa-brands fa-google-plus-g "></i>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------------- textimorial part ---------------------------->
+    <section class="textimorial">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.teximonial_para}}</p>
+                <h2>{{section_heading_paras.teximonial_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="textimorial_wrraper wrraper_padding">
+                <div class="container">
+                    {% for soceity_works in soceity_work %}
+                    <div class="textimorial_details_wrraper">
+                        <div class="textimorial_details_img">
+                            <img src="{{soceity_works.person_photo.url}}" alt="client">
+                        </div>
+                        <div class="textimorial_details">
+                            <div class="textimorial_details_description">
+                                <p><q>{{soceity_works.work_description}}</q></p>
+                            </div>
+                            <div class="textimorial_deatls_flex">
+                                <div class="textimorial_details_data">
+                                    <h3>{{soceity_works.person_name|upper}}</h3>
+                                    <p class="pl">{{soceity_works.person_post|upper}},</p>
+                                    <p class="pl">{{soceity_works.company_name|capfirst}}
+                                    </p>
+                                </div>
+                                <div class="textimorial_details_star">
+                                    <p>Rating {{soceity_works.rating}}/5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------------- achievements part ---------------------------->
+    <section class="achievment" id="achievment">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.achivement_para}}</p>
+                <h2>{{section_heading_paras.achivement_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="achivement_wrraper wrraper_padding">
+                <div class="left_achive">
+                    <div class="achine_one">
+                        <a href="">
+                            <div class="achive_project">
+                                <i class="fa-solid fa-laptop fa-xl"></i>
+                                <h3>Projects</h3>
+                                {% for soceity_work_counts in soceity_work_count %}
+                                <p><b class="count" data-target={{soceity_work_counts.id}}>0</b></p>
+                                {% endfor %}
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="achive_client">
+                                <i class="fa-solid fa-users fa-xl"></i>
+                                <h3>Clients</h3>
+                                {% for soceity_work_counts in soceity_work_count %}
+                                <p><b class="count" data-target={{soceity_work_counts.id}}>0</b></p>
+                                {% endfor %}
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="achine_two">
+                        {% for achivement in achivements %}
+                        <div class="achive_goal_one">
+                            <img src="{{achivement.achivement_img_one.url}}" alt="achive_goal_one 1" class="fade-image">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right_achive">
+                    <div class="achine_three">
+                        <div class="achive_goal_two">
+                            <img src="{{achivement.achivement_img_two.url}}" alt="achive_goal_one 2" class="fade-image">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="achine_four">
+                        <a href="">
+                            <div class="achive_our_team">
+                                <i class="fa-solid fa-people-group fa-xl"></i>
+                                <h3>Our Team</h3>
+                                {% for employees in employee %}
+                                <p><b class='count' data-target={{employees.id}}>0</b></p>
+                                {% endfor %}
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="achive_awards">
+                                <i class="fa-solid fa-award fa-xl"></i>
+                                <h3>Awards</h3>
+                                {% for profiles in profile %}
+                                <p><b class="count" data-target={{profiles.award}}>0</b></p>
+                                {% endfor %}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------------- about us part -------------------------------->
+    <section class="about" id="about">
+        <div class="row">
+            <div class="section_heading">
+                {% for section_heading_paras in section_heading_para %}
+                <p class="section_sub_hreading">{{section_heading_paras.about_para}}</p>
+                <h2>{{section_heading_paras.about_heading}}</h2>
+                {% endfor %}
+            </div>
+            <div class="about_wrapper wrraper_padding">
+                <div class="about_one">
+                    {% for about in abouts %}
+                    <div class="about_heading">
+                        <h3> {{about.vision_head}}</h3>
+                        <p>{{about.vision}}</p>
+                    </div>
+                    <div class="about_photos">
+                        <img src="{{about.vision_img.url}}" alt="vision" class="fade-image">
+                    </div>
+                  
+                </div>
+                <div class="about_one">
+                    
+                    <div class="about_photos">
+                        <img src="{{about.inspire_img.url}}" alt="creative" class="fade-image">
+                    </div>
+                    <div class="about_heading">
+                        <h3>{{about.inspire_head}}</h3>
+                        <p>{{about.inspire}}</p>
+                    </div>
+                    
+                </div>
+                <div class="about_one">
+                   
+                    <div class="about_heading">
+                        <h3>{{about.dreams_head}}</h3>
+                        <p>{{about.dreams}}</p>
+                    </div>
+                    <div class="about_photos">
+                        <img src="{{about.dreams_img.url}}" alt="dreams" class="fade-image">
+                    </div>
+                   
+                </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!------------------------------------- footer part --------------------------------->
+    <section class="footer">
+        <div class="row">
+            <div class="footer_wrapper wrraper_padding">
+                <div class="footer_coloum">
+                    <h4>ABOUT US</h4>
+                    <p class="aboutus_para">Top Project provides first-class construction solutions to individual and
+                        corporate clients
+                        worldwide.</p>
+                    <div class="footer_icon_wrapper">
+                        {% for profiles in profile %}
+                        <a aria-label="instagram" href='{{profiles.instra_link}}'>
+                            <div class="footer_icon">
+                                <i class="fa-brands fa-instagram "></i>
+                            </div>
+                        </a>
+                        <a aria-label="facebook" href='{{profiles.facebook_link}}'>
+                            <div class="footer_icon">
+                                <i class="fa-brands fa-facebook-f "></i>
+                            </div>
+                        </a>
+                        <a aria-label="twitter" href='{{profiles.twitter_link}}'>
+                            <div class="footer_icon">
+                                <i class="fa-brands fa-twitter "></i>
+                            </div>
+                        </a>
+                        <a aria-label="google" href='{{profiles.google_link}}'>
+                            <div class="footer_icon">
+                                <i class="fa-brands fa-google-plus-g "></i>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="footer_coloum">
+                    <h4>OPENING HOURS</h4>
+                    <div class="footer_week_wrapper">
+                        {% for profiles in profile %}
+                        <div class="weeks_days">
+                            <p class="weeks">Monday-Friday:</p>
+                        </div>
+                        <div class="time">
+                            <p>{{profiles.monday_friday}}</p>
+                        </div>
+                    </div>
+                    <div class="footer_week_wrapper">
+                        <div class="weeks_days">
+                            <p>Saturday:</p>
+                        </div>
+                        <div class="time">
+                            <p>{{profiles.saturday}}</p>
+                        </div>
+                    </div>
+                    <div class="footer_week_wrapper">
+                        <div class="weeks_days">
+                            <p class="weeks">Sunday:</p>
+                        </div>
+                        <div class="time">
+                            <p>{{profiles.sunday}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="footer_coloum">
+                    <h4>QUICK LINKS</h4>
+                    <div class="footer_quicklink_wrapper">
+                        <div class="quicklink_left">
+                            <a href="#landing">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Home</p>
+                                </div>
+                            </a>
+                            <a href="#contactus">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Contact</p>
+                                </div>
+                            </a>
+                            <a href="#service">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Services</p>
+                                </div>
+                            </a>
+                            <a href="#company_in_number">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Milestones</p>
+                                </div>
+                            </a>
+                            <a href="#project">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Projects</p>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="quicklink_left">
+                            <a href="#gallery">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Gallery</p>
+                                </div>
+                            </a>
+                            <a href="#teams_member">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Teams</p>
+                                </div>
+                            </a>
+
+                            <a href="#textimorial">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Textimorial</p>
+                                </div>
+                            </a>
+                            <a href="#achievment">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>Achievment</p>
+                                </div>
+                            </a>
+                            <a href="#about">
+                                <div class="link_wrapper">
+                                    <i class="fa-solid fa-arrow-right icon_color"></i>
+                                    <p>About</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_coloum">
+                    <h4>CONTACTS</h4>
+                    <a href="">
+                        <div class="footer_contact_wrapper">
+                            <div class="footer_icon_wrraper">
+                                <i class="fa-solid fa-mobile-screen-button icon_color"></i>
+                            </div>
+                            <div class="footer_contact_para_wrraper">
+                                {% for profiles in profile %}
+                                <p>(+91) {{profiles.number}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="footer_contact_wrapper">
+                            <div class="footer_icon_wrraper">
+                                <i class="fa-solid fa-envelope icon_color"></i>
+                            </div>
+                            <div class="footer_contact_para_wrraper">
+                                {% for profiles in profile %}
+                                <p>{{profiles.email}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://maps.app.goo.gl/kfwH8MNT8Gj3oerv9">
+                        <div class="footer_contact_wrapper">
+                            <div class="footer_icon_wrraper">
+                                <i class="fa-solid fa-location-dot icon_color"></i>
+                            </div>
+                            <div class="footer_contact_para_wrraper">
+                                {% for profiles in profile %}
+                                <p>{{profiles.address}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------------- term and policy part --------------------------------->
+    <div class="policy">
+        <a href="{% url 'term' %}">
+            <p><u>© 2024 Top Project Privacy Policy</u></p>
+        </a>
+    </div>
+
+    <script src="{% static 'website/js/custom.js' %}"></script>
+    {% comment %} <script src="{% static 'website/js/project_img_btn.js' %}"></script> {% endcomment %}
+
+
+</body>
+
+</html>

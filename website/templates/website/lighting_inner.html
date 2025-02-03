@@ -1,0 +1,78 @@
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Put your description here." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'website/css/media_768_1024.css' %}"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'website/css/media_320_767.css' %}"
+      as="style"
+    />
+
+    <title>Eletric Work</title>
+  </head>
+
+  <body class="service_body">
+
+    <a href="{% url 'home' %}" class="float_home"> Back to Home</a>
+
+   
+
+
+    <section class="table_section">
+      <div class="table_row">
+        <div class="search_items">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <select name="item_name" class="option_select">
+              <option selected disabled="true">----Select Items----</option>
+              <option>floor</option>
+              <option>glass</option>
+              <option>plywood</option>
+              <option>paint</option>
+            </select>
+            <input type="submit" value="Search" class="search_btn" />
+            <a href="{% url 'lightingservice' %}" class="float_reload"><i class="fa-solid fa-rotate fa-spin fa-lg"></i></a>
+          </form>
+        </div>
+        <div class="table_wrapper">
+          <table class="tablewidth">
+            <tr>
+              <th>SL No</th>
+              <th>Designated Space</th>
+              <th>Approved Manufacturer</th>
+              <th>Rate/Sqft</th>
+              <th>Schedule of Finishes</th>
+              <th>Remarks</th>
+            </tr>
+            {% if data %} {% for datas in data %}
+            <tr>
+              <td>{{datas.id}}</td>
+              <td>{{datas.item_name|upper}}</td>
+              <td>{{datas.brand|upper}}</td>
+              <td>{{datas.rate|upper}}</td>
+              <td>{{datas.item_description|upper}}</td>
+              <td>{{datas.remarks|upper}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        {% else %}
+        <h1>no data</h1>
+        {% endif %}
+      </div>
+    </section>
+  </body>
+</html>
