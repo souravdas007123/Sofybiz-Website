@@ -1,94 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
+      * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
 
-        body {
-            width: 100dvw;
-            height: 100dvh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #1c2841;
-        }
+      body {
+        width: 100dvw;
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1c2841;
+      }
 
-        /* css here */
-        .form_container {
-            width: 700px;
-        }
+      /* css here */
+      .form_container {
+        width: 700px;
+      }
 
-        .from_area {
-            position: relative;
-            height: 50px;
-            line-height: 50px;
-        }
+      .from_area {
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+      }
 
-        .input_box {
-            position: absolute;
-            width: 100%;
-            outline: none;
-            font-size: 1.1rem;
-            padding: 0 30px;
-            line-height: 50px;
-            border-radius: 10px;
-            border: 2px solid #f0ffff;
-            background: transparent;
-            transition: 0.1s ease;
-            z-index: 1;
-        }
+      .input_box {
+        position: absolute;
+        width: 100%;
+        outline: none;
+        font-size: 1.1rem;
+        padding: 0 30px;
+        line-height: 50px;
+        border-radius: 10px;
+        border: 2px solid #f0ffff;
+        background: transparent;
+        transition: 0.1s ease;
+        z-index: 1;
+      }
 
-        .label_name {
-            position: absolute;
-            font-size: 1rem;
-            color: #f0ffff;
-            padding: 0 25px;
-            margin: 0 20px;
-            background-color: #1c2841;
-            transition: 0.2s ease;
-        }
+      .label_name {
+        position: absolute;
+        font-size: 1rem;
+        color: #f0ffff;
+        padding: 0 25px;
+        margin: 0 20px;
+        background-color: #1c2841;
+        transition: 0.2s ease;
+      }
 
-        input:focus,
-        input:valid {
-            color: #66ff00;
-            border: 2px solid #66ff00;
-        }
+      input:focus,
+      input:valid {
+        color: #66ff00;
+        border: 2px solid #66ff00;
+      }
 
-        input:focus+.label_name,
-        input:valid+.label_name {
-            color: #66ff00;
-            height: 30px;
-            line-height: 30px;
-            transform: translate(-15px, -16px)scale(0.88);
-            z-index: 1;
-        }
+      input:focus + .label_name,
+      input:valid + .label_name {
+        color: #66ff00;
+        height: 30px;
+        line-height: 30px;
+        transform: translate(-15px, -16px) scale(0.88);
+        z-index: 1;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <form action="" method="post">
-        {% csrf_token %}
-        <!-- {{fm.as_p}}
+      {% csrf_token %}
+      <!-- {{fm.as_p}}
         <input type="submit" class="send_btn" value="Submit"> -->
-        <div class="form_container">
-            <div class="from_area">
-                {% for field in fm %}
-                <input type="{{field.field.widget.input_type}}" required class="input_box" name="{{field.name}}" id="{{field.id_for_label}}" value="{{field.value|default:''}}">
-                <label for="{{field.id_for_label}}" class="label_name">hi</label>
-                {% endfor %}
-            </div>
-            <input type="submit" class="send_btn" value="Submit">
+      <div class="form_container">
+        <div class="from_area">
+          {% for field in fm %}
+          <input
+            type="{{field.field.widget.input_type}}"
+            required
+            class="input_box"
+            name="{{field.name}}"
+            id="{{field.id_for_label}}"
+            value="{{field.value|default:''}}"
+          />
+          <label for="{{field.id_for_label}}" class="label_name">hi</label>
+          {% endfor %}
         </div>
+        <input type="submit" class="send_btn" value="Submit" />
+      </div>
     </form>
-</body>
+  </body>
 </html>
