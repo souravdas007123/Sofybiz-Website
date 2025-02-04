@@ -77,11 +77,11 @@ def interiorservice(request):
 
 def lightingservice(request):
     if request.method=="POST":
-        search=request.POST.get('item_name')
-        ser=Service.objects.filter(item_name=search)
-        return render(request,'website/lighting_inner.html',{'data':ser})
+        filter=request.POST.get('item_name')
+        filter_data=Service.objects.filter(item_name=filter)
+        return render(request,'website/lighting_inner.html',{'data':filter_data})
     else:
-     serv=Service.objects.all()
-    return render(request,'website/lighting_inner.html',{'data':serv})
+     filter_data=Service.objects.all()
+    return render(request,'website/lighting_inner.html',{'data':filter_data})
 
 
