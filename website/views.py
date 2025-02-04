@@ -70,6 +70,12 @@ def falseceiling(request):
     return render(request,'website/falseceiling.html',{'gallerys':gallerys})
 
 def constructionservice(request):
+    if request.method=="POST":
+        filter=request.POST.get('item_name')
+        filter_data=Service.objects.filter(item_name=filter)
+        return render(request,'website/construction_inner.html',{'data':filter_data})
+    else:
+     filter_data=Service.objects.all()
     return render(request,'website/construction_inner.html')
 
 def interiorservice(request):

@@ -640,13 +640,18 @@ option{
     position: relative;
 }
 .float_home{
-    padding: 10px 10px;
-    position: absolute;
-    left:50px;
-    top: 20px;
-    background-color:var(--theame2);
-    color: rgb(12, 12, 12);
-    border: 10px;
+    padding: 10px 20px;
+    /* width: 70px;
+    height: 40px; */
+    /* position: absolute; */
+    /* left:50px; */
+    /* top: 20px; */
+    /* background-color:var(--theame2); */
+    color: var(--theame2);
+    border-bottom: 1px solid var(--theame2);
+    margin: 15px;
+    border-radius: 5px;
+    font-family: p;
 }
 .float_reload{
     padding: 10px 10px;
@@ -654,6 +659,14 @@ option{
 }
 .no_data{
     color: white;
+}
+.switch_btn{
+    width: 100%;
+    height: 50px;
+    /* background-color: #ba7330; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /*********************** Our company in numbers part *********************/
 /*.company_in_number{*/

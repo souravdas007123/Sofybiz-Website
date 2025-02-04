@@ -28,8 +28,12 @@
     <title>Eletric Work</title>
   </head>
   <body class="service_body">
-    <a href="{% url 'home' %}" class="float_home"> Back to Home</a>
-    
+    <div class="switch_btn">
+        <a href="{% url 'home' %}" class="float_home">Home</a>
+        <a href="{% url 'interiorservice' %}" class="float_home">Interior</a>
+        <a href="{% url 'constructionservice' %}" class="float_home"> Contruction</a>
+    </div>
+    {% comment %} <a href="{% url 'home' %}" class="float_home"> Back to Home</a> {% endcomment %}
     <section class="table_section">
       <div class="table_row">
         <div class="search_items">
@@ -37,9 +41,9 @@
             {% csrf_token %}
             <select name="item_name" class="option_select">
               <option selected disabled="true">----Select Items----</option>
-              {% comment %} <option>floor</option> {% endcomment %}
               <option>glass</option>
-              {% comment %} <option>plywood</option>
+              {% comment %} <option>glass</option>
+              <option>plywood</option>
               <option>paint</option> {% endcomment %}
             </select>
             <input type="submit" value="Fliter" class="filter_btn" />

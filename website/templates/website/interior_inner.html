@@ -28,7 +28,12 @@
     <title>Eletric Work</title>
   </head>
   <body class="service_body">
-    <a href="{% url 'home' %}" class="float_home"> Back to Home</a>
+    <div class="switch_btn">
+        <a href="{% url 'home' %}" class="float_home">Home</a>
+        <a href="{% url 'lightingservice' %}" class="float_home"> Electic</a>
+        <a href="{% url 'constructionservice' %}" class="float_home"> Contruction</a>
+    </div>
+    {% comment %} <a href="{% url 'home' %}" class="float_home"> Back to Home</a> {% endcomment %}
     <section class="table_section">
       <div class="table_row">
         <div class="search_items">
