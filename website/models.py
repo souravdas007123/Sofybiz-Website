@@ -160,6 +160,14 @@ class About(models.Model):
     dreams=models.CharField(max_length=300)
     dreams_img=models.ImageField(upload_to="web_photos")
 
+# service category models
+
+class Service_caterory(models.Model):
+    category_name=models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.category_name
+
 # service work models
 
 class Service(models.Model):
@@ -167,4 +175,5 @@ class Service(models.Model):
     brand=models.CharField(max_length=400)
     rate=models.IntegerField(default=0)
     item_description=models.CharField(max_length=400)
+    category=models.ForeignKey(Service_caterory,on_delete=models.CASCADE)
     remarks=models.CharField(max_length=400)
