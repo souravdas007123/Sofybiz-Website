@@ -76,7 +76,7 @@ def constructionservice(request):
         return render(request,'website/construction_inner.html',{'data':filter_data})
     else:
      filter_data=Service.objects.all()
-    return render(request,'website/construction_inner.html')
+    return render(request,'website/construction_inner.html',{'data':filter_data})
 
 def interiorservice(request):
     if request.method=="POST":
