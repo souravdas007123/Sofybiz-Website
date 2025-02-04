@@ -73,7 +73,13 @@ def constructionservice(request):
     return render(request,'website/construction_inner.html')
 
 def interiorservice(request):
-    return render(request,'website/interior_inner.html')
+    if request.method=="POST":
+        filter=request.POST.get('item_name')
+        filter_data=Service.objects.filter(item_name=filter)
+        return render(request,'website/interior_inner.html',{'data':filter_data})
+    else:
+     filter_data=Service.objects.all()
+    return render(request,'website/interior_inner.html',{'data':filter_data})
 
 def lightingservice(request):
     if request.method=="POST":
