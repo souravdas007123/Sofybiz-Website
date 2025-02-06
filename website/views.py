@@ -30,7 +30,7 @@ def home(request):
         return HttpResponseRedirect('/')
     else: 
         form=Queryform(label_suffix=' ')
-    return render(request,'website/home.html',{'form':form,'profile':profile,'team':team,'soceity_work':soceity_work,'soceity_work_count':soceity_work_count,'employee':employee,'abouts':abouts,'achivements':achivements,'section_heading_para':section_heading_para,'gallery':gallery})
+    return render(request,'website/index.html',{'form':form,'profile':profile,'team':team,'soceity_work':soceity_work,'soceity_work_count':soceity_work_count,'employee':employee,'abouts':abouts,'achivements':achivements,'section_heading_para':section_heading_para,'gallery':gallery})
 
 
 def term(request):
