@@ -150,7 +150,7 @@ label {
     width: 25%;
     height: 750px;
     margin-left: 100px;
-    
+
 }
 
 .right_landing {
@@ -164,7 +164,7 @@ label {
     position: absolute;
     top:25px;
     left: 50px;
-  
+
 }
 .logocont img{
     width: 100%;
@@ -922,7 +922,7 @@ option{
     justify-content: center;
     align-items: center;
     /* background-color: rgb(187, 35, 166); */
-    
+
 }
 .member_gallery1{
     width: 60%;
@@ -1042,7 +1042,7 @@ option{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
 }
 .textimorial_details_description{
     width: 80%;
@@ -1138,7 +1138,7 @@ option{
 
 .achive_project {
     width: 170px;
-    aspect-ratio: 1/0.8;
+    aspect-ratio: 1/1;
     background-color: var(--theame1);
     color: var(--theame2);
     text-align: center;
@@ -1147,7 +1147,7 @@ option{
 
 .achive_client {
     width: 170px;
-    aspect-ratio: 1/0.8;
+    aspect-ratio: 1/1;
     background-color: var(--theame2);
     color: var(--theame1);
     text-align: center;

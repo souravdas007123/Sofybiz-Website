@@ -1,6 +1,6 @@
 @media (min-width : 320px) and (max-width : 766px){
     /*********************** font size part *********************/
-    
+
     h1{
          font-size: 30px;
          /*font-weight: 700;*/
@@ -34,7 +34,7 @@
     body{
         overflow-x:hidden;
     }
-    
+
     .row{
         width:100%;
     }
@@ -218,7 +218,7 @@
             scroll-behavior: smooth; /* Smooth scrolling */
             width: 100%;
           }
-    
+
           /* Ensure each item takes up full width of the carousel */
           .link {
             flex: 0 0 100%; /* Each item takes 100% width of the container */
@@ -227,7 +227,7 @@
             display: flex;
             justify-content: center;
           }
-    
+
           /* Style for the contact data */
           .contact_left_data {
             width:100%;
@@ -242,7 +242,7 @@
             transition: transform 0.3s ease-in-out;
             text-align: center;
           }
-    
+
           /* Make the icons larger for better visibility */
           .contact_icon i {
             font-size: 28px; /* Larger icons */
@@ -263,13 +263,13 @@
             font-weight: bold;
             color: #333;
           }
-    
+
           .contact_heading p {
             margin: 5px 0;
             color: black;
             font-size: 14px;
           }
-    
+
         .contact_right_para,.right_contact_heading{
             width: 100%;
             text-align: center;
@@ -309,6 +309,9 @@
     }
     .button{
         margin:20px 10px;
+    }
+    .label_field {
+        padding:0 15px;
     }
     /*********************** service  part *********************/
         .service{
@@ -415,7 +418,7 @@
             margin-top: 20px;
             font-weight: 600;
         }
-    
+
         .company_wrapper{
             /*height: 70%;*/
             width: 100%;
@@ -423,7 +426,7 @@
             align-items: center;
             flex-direction: column;
         }
-    
+
         .number_wrapper{
             /*height: 35%;*/
            width: 100%;
@@ -554,7 +557,7 @@
            width: 50px;
            height: 50px;
     }
-    
+
     /*********************** gallery part *********************/
         .gallery{
             /*height: 100dvh;*/
@@ -566,7 +569,7 @@
         .gallery .row{
             height: 100%;
             width: 100%;
-    
+
         }
         .gallery_heading{
             padding: 0;
@@ -582,7 +585,7 @@
         }
         .gallery_wrapper{
             margin-top: 25px;
-    
+
         }
         .gallery_wrapper{
             /*width:1200px;*/
@@ -600,7 +603,7 @@
           .coloum-2{
              grid-column:span 0;
     }
-    
+
     /*********************** Our teams member part *********************/
     .teams_member{
         /*height: 100dvh;*/
@@ -621,20 +624,22 @@
 
     .member_gallery1{
         width: 100%;
-        aspect-ratio: 1/0.6;
+        aspect-ratio: 1/1;
         /*height: 40%;*/
         display: flex;
         flex-direction:column;
         justify-content: center;
         align-items: center;
+        padding:10px 0;
     }
     .member_gallery2{
         width: 100%;
-        aspect-ratio: 1/0.6;
+        aspect-ratio: 1/1;
         display: flex;
         flex-direction:column;
         justify-content: center;
         align-items: center;
+        padding:10px 0;
     }
     .member_img{
         width: 100%;
@@ -644,13 +649,13 @@
         /*background-color: aqua;*/
     }
     .member_img img{
-       width: 80%;
+       width: 90%;
        aspect-ratio:1/0.7;
 
 }
     .gallery_name{
         /*height:30%;*/
-        width:80%;
+        width:90%;
         padding: 0px 10px;
         display: flex;
         flex-direction:column;
@@ -710,21 +715,30 @@
         padding:15px;
         border-radius: 10px;
     }
+    .textimorial_details_img{
+        width:30%;
+        height:30%;
+        position: relative;
+        top: 12%;
+        border-radius: 50%;
+        z-index: 10;
+        border: 3px solid var(--theame2);
+}
     .textimorial_details_wrraper img{
-        width:80%;
-        height:60%;
+        width:100%;
+        height:100%;
         object-fit:cover;
         /*height:100%;*/
-        border-radius: 10px;
+        /*border-radius: 50%;*/
     }
     .textimorial_details h3{
         color:var(--theame2);
-    
-    
+
+
     }
     .textimorial_details p{
         font-size:10px;
-    
+
     }
     /*********************** achievment  part *********************/
     .achievment{
@@ -927,6 +941,8 @@
             margin: 0;
             padding: 10px 0;
             /*background-color: #3cb371;*/
+            /*justify-content:center;*/
+            /*align-items: center;*/
         }
         /*.footer_coloum h4{*/
         /*    font-size: 15px;*/
