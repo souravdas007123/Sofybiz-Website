@@ -161,9 +161,9 @@ label {
 .logocont{
     width: 40px;
     height: 40px;
-    position: absolute;
-    top:25px;
-    left: 50px;
+    /*position: absolute;*/
+    /*top:25px;*/
+    /*left: 50px;*/
 
 }
 .logocont img{
@@ -172,12 +172,12 @@ label {
     object-fit: cover;
 }
 .landing_logo {
-    /* background-color: #d62f4e; */
+    /*background-color: #d62f4e;*/
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
+    padding: 15px 0px;
 }
 
 .logo {
@@ -1138,7 +1138,7 @@ option{
 
 .achive_project {
     width: 170px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/0.8;
     background-color: var(--theame1);
     color: var(--theame2);
     text-align: center;
@@ -1147,7 +1147,7 @@ option{
 
 .achive_client {
     width: 170px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/0.8;
     background-color: var(--theame2);
     color: var(--theame1);
     text-align: center;

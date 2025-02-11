@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Put your description here.">
 
-    <link rel="icon" href="{% static 'website/img/favicon.png'%}" type="image/x-icon">
+    <link rel="icon" href="{% static 'website/img/logo.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,18 +21,19 @@
 </head>
 
 <body>
-    
+
     <!------------------------------- landing part -------------------------------->
     <div class="landing" id="landing">
         <div class="landing_row">
             <div class="landing_wrapper">
                 <div class="left_landing" id="left">
                     {% for profiles in profile %}
-                    <div class="logocont">
-                        <img src="{{profiles.company_logo.url}}" alt="" srcset="">
-                    </div>
+
                     <div class="landing_logo">
                         <div class="logo">
+                            <div class="logocont">
+                                <img src="{{profiles.company_logo.url}}" alt="sofybiz-logo" srcset="">
+                            </div>
                             <h4>{{profiles.company_name}}</h4>
                         </div>
                         {% endfor %}
@@ -111,7 +112,6 @@
                             <div class="contact_left_data">
                                 <div class="contact_icon">
                                     <i class="fa-solid fa-mobile-screen-button icon_contact"></i>
-                                    <!--<img src="{% static 'website/img/smartphone.png' %}" alt="phone" >-->
                                 </div>
                                 <div class="contact_heading">
                                     <h3>CONTACTS</h3>
@@ -199,7 +199,6 @@
                                 <li>Roof</li>
                                 <li>Ceiling</li>
                                 <li>Tiles,Marble</li>
-
                             </ul>
                         </div>
                         <a aria-label="construction" href="{% url 'constructionservice' %}" title="construction">
@@ -346,7 +345,7 @@
                     {% endfor %}
                 </div>
                 <div class="project_gallery">
-                    <img src="{% static 'website/img/kitchen.webp' %}" alt="project" class="lproject"
+                    <img src="{% static 'website/img/project.webp' %}" alt="project" class="lproject"
                         style="display:block" ;>
                     <div class="search" id="src">
                         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
@@ -446,7 +445,7 @@
                                 </a>
                                 {% endfor %}
                             </div>
-                           
+
                         </div>
                     </div>
                     <div class="member_gallery1">
@@ -689,10 +688,10 @@
                     <div class="about_photos">
                         <img src="{{about.vision_img.url}}" alt="vision" class="fade-image">
                     </div>
-                  
+
                 </div>
                 <div class="about_one">
-                    
+
                     <div class="about_photos">
                         <img src="{{about.inspire_img.url}}" alt="creative" class="fade-image">
                     </div>
@@ -700,10 +699,10 @@
                         <h3>{{about.inspire_head}}</h3>
                         <p>{{about.inspire}}</p>
                     </div>
-                    
+
                 </div>
                 <div class="about_one">
-                   
+
                     <div class="about_heading">
                         <h3>{{about.dreams_head}}</h3>
                         <p>{{about.dreams}}</p>
@@ -711,7 +710,7 @@
                     <div class="about_photos">
                         <img src="{{about.dreams_img.url}}" alt="dreams" class="fade-image">
                     </div>
-                   
+
                 </div>
                     {% endfor %}
             </div>
@@ -756,7 +755,7 @@
                     <div class="footer_week_wrapper">
                         {% for profiles in profile %}
                         <div class="weeks_days">
-                            <p class="weeks">Monday-Friday:</p>
+                            <p class="weeks">Monday-Friday -</p>
                         </div>
                         <div class="time">
                             <p>{{profiles.monday_friday}}</p>
@@ -764,7 +763,7 @@
                     </div>
                     <div class="footer_week_wrapper">
                         <div class="weeks_days">
-                            <p>Saturday:</p>
+                            <p>Saturday -</p>
                         </div>
                         <div class="time">
                             <p>{{profiles.saturday}}</p>
@@ -772,7 +771,7 @@
                     </div>
                     <div class="footer_week_wrapper">
                         <div class="weeks_days">
-                            <p class="weeks">Sunday:</p>
+                            <p class="weeks">Sunday -</p>
                         </div>
                         <div class="time">
                             <p>{{profiles.sunday}}</p>

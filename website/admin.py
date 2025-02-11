@@ -15,13 +15,13 @@ class SectionAdmin(admin.ModelAdmin):
 
 @admin.register(Query_data)
 class Query_dataAdmin(admin.ModelAdmin):
-    list_display=['id','name','email','address','number','queries']
+    list_display=['id','date','name','email','address','number','queries']
 
 # term and policy models here.
 
 @admin.register(Term_policy)
 class Term_policyAdmin(admin.ModelAdmin):
-    list_display=['id','condition_use','privacy_policy','age_restriction','intellectual_propertye','user_accounts','disputes','indemnification','limitation_on_liability']  
+    list_display=['id','condition_use','privacy_policy','age_restriction','intellectual_propertye','user_accounts','disputes','indemnification','limitation_on_liability']
 
 # team models here.
 
@@ -47,39 +47,39 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
-    list_display=['id','falseceilling_photo','floor_photo','wallpannel_photo','washroom_photo','bedroom_photo','livingroom_photo','kitchen_photo','drawingroom_photo'] 
+    list_display=['id','falseceilling_photo','floor_photo','wallpannel_photo','washroom_photo','bedroom_photo','livingroom_photo','kitchen_photo','drawingroom_photo']
 
 
 # profile models here.
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display=['id','company_name','company_logo','gst_no','pan_no','address','email','number','years_of_market','instra_link','facebook_link','twitter_link','google_link','award']            
+    list_display=['id','company_name','company_logo','gst_no','pan_no','address','email','number','years_of_market','instra_link','facebook_link','twitter_link','google_link','award']
 
 
 # about models here.
- 
+
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
-    list_display=['id','vision_head','vision','vision_img','inspire_head','inspire','inspire_img','dreams_head','dreams','dreams_img']    
+    list_display=['id','vision_head','vision','vision_img','inspire_head','inspire','inspire_img','dreams_head','dreams','dreams_img']
 
 
 # achivement models here.
- 
+
 @admin.register(Achivement)
 class AchivementAdmin(admin.ModelAdmin):
-    list_display=['id','achivement_img_one','achivement_img_two']    
+    list_display=['id','achivement_img_one','achivement_img_two']
 
 
 # service models here.
- 
+
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display=['id','item_name','brand','category','rate','item_description','remarks'] 
+    list_display=['id','item_name','brand','category','rate','item_description','remarks']
 
 
 # service category here.
- 
+
 @admin.register(Service_caterory)
 class Service_cateroryAdmin(admin.ModelAdmin):
-    list_display=['id','category_name'] 
+    list_display=['id','category_name']

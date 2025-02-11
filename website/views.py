@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from website.forms import Queryform
-from website.models import Term_policy,Query_data,Team,Soceity_work,Employee,Profile,About,Achivement,Gallery,Section,Service
+from website.models import Term_policy,Query_data,Team,Soceity_work,Employee,Profile,About,Achivement,Gallery,Section,Service,Service_caterory
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -28,7 +28,7 @@ def home(request):
           user=Query_data(name=name,email=email,number=number,address=address,queries=queries)
           user.save()
         return HttpResponseRedirect('/')
-    else: 
+    else:
         form=Queryform(label_suffix=' ')
     return render(request,'website/index.html',{'form':form,'profile':profile,'team':team,'soceity_work':soceity_work,'soceity_work_count':soceity_work_count,'employee':employee,'abouts':abouts,'achivements':achivements,'section_heading_para':section_heading_para,'gallery':gallery})
 
@@ -69,28 +69,37 @@ def falseceiling(request):
     gallerys=Gallery.objects.all().order_by('-id')
     return render(request,'website/falseceiling.html',{'gallerys':gallerys})
 
+#  service caterory area
+
+
+#  constructionservice caterory area
+
 def constructionservice(request):
     if request.method=="POST":
-        filter=request.POST.get('item_name')
-        filter_data=Service.objects.filter(item_name=filter)
+        category_filter=request.POST.get('category')
+        filter_data=Service.objects.filter(category=category_filter)
         return render(request,'website/construction_inner.html',{'data':filter_data})
     else:
      filter_data=Service.objects.all()
     return render(request,'website/construction_inner.html',{'data':filter_data})
 
+ #  interiorservice caterory area
+
 def interiorservice(request):
     if request.method=="POST":
-        filter=request.POST.get('item_name')
-        filter_data=Service.objects.filter(item_name=filter)
+        category_filter=request.POST.get('category')
+        filter_data=Service.objects.filter(category=category_filter)
         return render(request,'website/interior_inner.html',{'data':filter_data})
     else:
      filter_data=Service.objects.all()
     return render(request,'website/interior_inner.html',{'data':filter_data})
 
+ #  lightingservice caterory area
+
 def lightingservice(request):
     if request.method=="POST":
-        filter=request.POST.get('item_name')
-        filter_data=Service.objects.filter(item_name=filter)
+        category_filter=request.POST.get('category')
+        filter_data=Service.objects.filter(category=category_filter)
         return render(request,'website/lighting_inner.html',{'data':filter_data})
     else:
      filter_data=Service.objects.all()

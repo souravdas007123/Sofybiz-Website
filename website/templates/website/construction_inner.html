@@ -39,12 +39,20 @@
         <div class="search_items">
           <form action="" method="POST">
             {% csrf_token %}
-            <select name="item_name" class="option_select">
+            <select name="category" class="option_select">
               <option selected disabled="true">----Select Items----</option>
-              <option>floor</option>
-              {% comment %} <option>glass</option>
-              <option>plywood</option>
-              <option>paint</option> {% endcomment %}
+              <option>Wallpaper</option>
+              <option>Door</option>
+              <option>Roof_Water_Profing</option>
+              <option>Paint</option>
+              <option>Marble</option>
+              <option>Siding_Window</option>
+              <option>Ceiling_Light</option>
+              <option>Falseceiling</option>
+              <option>Bathroom</option>
+              <option>Basin</option>
+              <option>Kitchen_Counter</option>
+              <option>Tiles</option>
             </select>
             <input type="submit" value="Fliter" class="filter_btn" />
             <a href="{% url 'constructionservice' %}" class="float_reload"
@@ -62,7 +70,7 @@
               <th>Schedule of Finishes</th>
               <th>Remarks</th>
             </tr>
-            {% if data %} 
+            {% if data %}
             {% for datas in data %}
             <tr>
               <td>{{datas.id}}</td>
@@ -72,7 +80,7 @@
               <td>{{datas.item_description|upper}}</td>
               <td>{{datas.remarks|upper}}</td>
             </tr>
-            {% endfor %} 
+            {% endfor %}
             {% else %}
             <div class="no_data">
               <h2>No Data</h2>
