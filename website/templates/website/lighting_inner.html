@@ -41,18 +41,18 @@
             {% csrf_token %}
             <select name="category" class="option_select">
               <option selected disabled="true">----Select Items----</option>
-              <option>Wallpaper</option>
-              <option>Door</option>
-              <option>Roof_Water_Profing</option>
-              <option>Paint</option>
-              <option>Marble</option>
-              <option>Siding_Window</option>
+              <!--<option>Wallpaper</option>-->
+              <!--<option>Door</option>-->
+              <!--<option>Roof_Water_Profing</option>-->
+              <!--<option>Paint</option>-->
+              <!--<option>Marble</option>-->
+              <!--<option>Siding_Window</option>-->
               <option>Ceiling_Light</option>
-              <option>Falseceiling</option>
-              <option>Bathroom</option>
-              <option>Basin</option>
-              <option>Kitchen_Counter</option>
-              <option>Tiles</option>
+              <!--<option>Falseceiling</option>-->
+              <!--<option>Bathroom</option>-->
+              <!--<option>Basin</option>-->
+              <!--<option>Kitchen_Counter</option>-->
+              <!--<option>Tiles</option>-->
             </select>
             <input type="submit" value="Fliter" class="filter_btn" />
             <a href="{% url 'lightingservice' %}" class="float_reload"
@@ -64,10 +64,11 @@
           <table class="tablewidth">
             <tr>
               <th>SL No</th>
-              <th>Designated Space</th>
-              <th>Approved Manufacturer</th>
-              <th>Rate/Sqft</th>
-              <th>Schedule of Finishes</th>
+              <th>Items Description</th>
+              <th>Brand</th>
+              <th>Rate</th>
+              <th>Units</th>
+              <th>Purpose of Items</th>
               <th>Remarks</th>
             </tr>
             {% if data %}
@@ -77,6 +78,7 @@
               <td>{{datas.item_name|upper}}</td>
               <td>{{datas.brand|upper}}</td>
               <td>{{datas.rate|upper}}</td>
+              <td>{{datas.unit|upper}}</td>
               <td>{{datas.item_description|upper}}</td>
               <td>{{datas.remarks|upper}}</td>
             </tr>

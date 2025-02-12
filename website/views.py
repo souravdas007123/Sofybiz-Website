@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from website.forms import Queryform
-from website.models import Term_policy,Query_data,Team,Soceity_work,Employee,Profile,About,Achivement,Gallery,Section,Service,Service_caterory
+from website.models import Term_policy,Query_data,Team,Soceity_work,Employee,Profile,About,Achivement,Gallery,Section,Service
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -102,7 +102,7 @@ def lightingservice(request):
         filter_data=Service.objects.filter(category=category_filter)
         return render(request,'website/lighting_inner.html',{'data':filter_data})
     else:
-     filter_data=Service.objects.all()
+     filter_data=Service.objects.filter(category='Ceiling_Light')
     return render(request,'website/lighting_inner.html',{'data':filter_data})
 
 

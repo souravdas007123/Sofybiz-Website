@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Term_policy,Query_data,Team,Soceity_work,Employee,Gallery,Profile,About,Achivement,Section,Service,Service_caterory
+from website.models import Term_policy,Query_data,Team,Soceity_work,Employee,Gallery,Profile,About,Achivement,Section,Service
 
 # Register your models here.
 
@@ -75,11 +75,5 @@ class AchivementAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display=['id','item_name','brand','category','rate','item_description','remarks']
+    list_display=['id','item_name','brand','category','rate','unit','item_description','remarks']
 
-
-# service category here.
-
-@admin.register(Service_caterory)
-class Service_cateroryAdmin(admin.ModelAdmin):
-    list_display=['id','category_name']

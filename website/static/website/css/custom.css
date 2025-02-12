@@ -147,9 +147,9 @@ label {
 
 .left_landing {
     /*background-color: #282828;*/
-    width: 25%;
+    width: 35%;
     height: 750px;
-    margin-left: 100px;
+    margin-left: 80px;
 
 }
 
@@ -208,25 +208,25 @@ label {
 .menu:hover .bar_one,
 .menu:hover .bar_two,
 .menu:hover .bar_three {
-    width: 70%;
+    width: 55%;
 }
 
 .bar_one {
-    width: 75%;
+    width: 55%;
     height: 4%;
     background-color: white;
     transition: 0.4s;
 }
 
 .bar_two {
-    width: 60%;
+    width: 45%;
     height: 4%;
     background-color: white;
     transition: 0.4s;
 }
 
 .bar_three {
-    width: 45%;
+    width: 30%;
     height: 4%;
     background-color: white;
     transition: 0.4s;
@@ -600,8 +600,10 @@ td{
 }
 th,td{
     border: 1px solid rgb(255, 255, 255);
-    padding: 8px 0;
+    padding: 8px 5px;
     font-family: p;
+    font-size:12px;
+    word-wrap: break-word;
 }
 .table_wrapper {
     display: flex;
@@ -631,6 +633,8 @@ th,td{
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
+    background-color:var(--theame1);
+    color: var(--theame2);
 }
 option{
     font-weight: bold;

@@ -25,6 +25,9 @@ class Section(models.Model):
     about_heading=models.CharField(max_length=200)
     about_para=models.CharField(max_length=200)
 
+    class Meta:
+        verbose_name_plural='4. Section'
+
 
 # query models
 
@@ -35,6 +38,9 @@ class Query_data(models.Model):
     address=models.CharField(max_length=200)
     number=models.CharField(max_length=12)
     queries=models.CharField(max_length=1000)
+
+    class Meta:
+        verbose_name_plural='3. Query'
 
 # term and policy models
 
@@ -47,6 +53,9 @@ class Term_policy(models.Model):
     disputes=models.CharField(max_length=1000)
     indemnification=models.CharField(max_length=1000)
     limitation_on_liability=models.CharField(max_length=1000)
+
+    class Meta:
+        verbose_name_plural='11. Policy'
 
 
 # team models
@@ -81,6 +90,9 @@ class Team(models.Model):
     engineer_twitter_link=models.URLField(blank=True)
     engineer_google_link=models.URLField(blank=True)
 
+    class Meta:
+        verbose_name_plural='6. Team'
+
 
 # soceity work models
 
@@ -96,6 +108,9 @@ class Soceity_work(models.Model):
     end_of_work_date=models.DateField()
     rating=models.IntegerField(default=4)
 
+    class Meta:
+        verbose_name_plural='10. Soceity'
+
 
 # employee models
 
@@ -105,6 +120,9 @@ class Employee(models.Model):
     id_card=models.CharField(max_length=400)
     work_designation=models.CharField(max_length=50,blank=True)
     employee_photo=models.ImageField(upload_to="web_photos",blank=True)
+
+    class Meta:
+        verbose_name_plural='2. Employee'
 
 # gallery models
 
@@ -118,6 +136,9 @@ class Gallery(models.Model):
     livingroom_photo=models.ImageField(upload_to="web_photos")
     kitchen_photo=models.ImageField(upload_to="web_photos")
     drawingroom_photo=models.ImageField(upload_to="web_photos")
+
+    class Meta:
+        verbose_name_plural='5. Gallery'
 
 
 # profile models
@@ -140,12 +161,18 @@ class Profile(models.Model):
     google_link=models.URLField(blank=True)
     award=models.IntegerField(blank=True)
 
+    class Meta:
+        verbose_name_plural='1. Profile'
+
 
 # achivement models  #
 
 class Achivement(models.Model):
     achivement_img_one=models.ImageField(upload_to="web_photos")
     achivement_img_two=models.ImageField(upload_to="web_photos")
+
+    class Meta:
+        verbose_name_plural='8. Achivement'
 
 
 # abouts models
@@ -161,36 +188,53 @@ class About(models.Model):
     dreams=models.CharField(max_length=300)
     dreams_img=models.ImageField(upload_to="web_photos")
 
-# service category models
+    class Meta:
+        verbose_name_plural='9. About'
 
-class Service_caterory(models.Model):
-    category_name=models.CharField(max_length=400)
-
-    def __str__(self):
-        return self.category_name
 
 # service work models
 
 class Service(models.Model):
 
+    Unit=[
+
+        ("Cft" ,"Cft"),
+        ("Kg" ,"Kg"),
+        ("Mtr" ,"Mtr"),
+        ("Ltr" ,"Ltr"),
+        ("Pc" ,"Pc"),
+        ("Pcs" ,"Pcs"),
+        ("Roll" ,"Roll"),
+        ("Sqft" ,"Sqft"),
+        ("Sqmtr" ,"Sqmtr"),
+
+        ]
+
     Cateto=[
-            ("Wallpaper" ,"Wallpaper"),
-            ("Door" ,"Door"),
-            ("Roof_Water_Profing" ,"Roof_Water_Profing"),
-            ("Paint" ,"Paint"),
-            ("Marble" ,"Marble"),
-            ("Siding_Window" ,"Siding_Window"),
-            ("Ceiling_Light" ,"Ceiling_Light"),
-            ("Falseceiling" ,"Falseceiling"),
-            ("Bathroom" ,"Bathroom"),
             ("Basin" ,"Basin"),
-            ("Kitchen_Counter" ,"Kitchen_Counter"),
+            ("Bathroom" ,"Bathroom"),
+            ("Ceiling_Light" ,"Ceiling Light"),
+            ("Door" ,"Door"),
+            ("Falseceiling" ,"False Ceiling"),
+            ("Kitchen_Counter" ,"Kitchen Counter"),
+            ("Marble" ,"Marble"),
+            ("Paint" ,"Paint"),
+            ("Roof_Water_Profing" ,"Roof Water Profing"),
+            ("Siding_Window" ,"Siding Window"),
             ("Tiles" ,"Tiles"),
+            ("Wallpaper" ,"Wallpaper"),
         ]
 
     category=models.CharField(max_length=400,choices=Cateto,blank=True)
     item_name=models.CharField(max_length=400)
     brand=models.CharField(max_length=400)
-    rate=models.IntegerField()
+    rate=models.CharField(max_length=400)
+    unit=models.CharField(max_length=400,choices=Unit,blank=True)
     item_description=models.CharField(max_length=400)
     remarks=models.CharField(max_length=400)
+
+    class Meta:
+        verbose_name_plural='7. Service'
+
+
+

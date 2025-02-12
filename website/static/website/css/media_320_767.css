@@ -375,15 +375,26 @@
         padding:10px 5px;
         margin:0;
     }
-    tr{
-        border:1px solid black;
-        text-align:left;
-    }
+    /*tr{*/
+    /*    border:1px solid black;*/
+    /*    text-align:left;*/
+    /*}*/
+    /*th{*/
+    /*    font-size:10px;*/
+    /*}*/
+    /*td{*/
+    /*   font-size:10px;*/
+    /*}*/
     th{
-        font-size:10px;
+        color: var(--theame2);
     }
     td{
-       font-size:10px;
+        color: white;
+    }
+    th,td{
+        border: 1px solid rgb(255, 255, 255);
+        padding: 8px 5px;
+        font-size:12px;
     }
     .tablewidth{
         width:100%;
@@ -394,6 +405,12 @@
         justify-content: center;
         align-items: center;
     }
+    .float_home{
+        margin: 12px;
+        border-radius: 5px;
+        font-family: p;
+        font-size:12px;
+}
     /*********************** Our company in numbers part *********************/
         .company_in_number{
             /*height: 100dvh;*/
