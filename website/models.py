@@ -42,21 +42,6 @@ class Query_data(models.Model):
     class Meta:
         verbose_name_plural='3. Query'
 
-# term and policy models
-
-class Term_policy(models.Model):
-    condition_use=models.CharField(max_length=1000)
-    privacy_policy=models.CharField(max_length=1000)
-    age_restriction=models.CharField(max_length=1000)
-    intellectual_propertye=models.CharField(max_length=1000)
-    user_accounts=models.CharField(max_length=1000)
-    disputes=models.CharField(max_length=1000)
-    indemnification=models.CharField(max_length=1000)
-    limitation_on_liability=models.CharField(max_length=1000)
-
-    class Meta:
-        verbose_name_plural='11. Policy'
-
 
 # team models
 
@@ -92,24 +77,6 @@ class Team(models.Model):
 
     class Meta:
         verbose_name_plural='6. Team'
-
-
-# soceity work models
-
-class Soceity_work(models.Model):
-    person_name=models.CharField(max_length=400)
-    person_photo=models.ImageField(upload_to="web_photos",blank=True)
-    person_post=models.CharField(max_length=400)
-    company_name=models.CharField(max_length=400)
-    company_photo=models.ImageField(upload_to="web_photos",blank=True)
-    work_designation=models.CharField(max_length=400)
-    work_description=models.CharField(max_length=800)
-    address=models.CharField(max_length=400)
-    end_of_work_date=models.DateField()
-    rating=models.IntegerField(default=4)
-
-    class Meta:
-        verbose_name_plural='10. Soceity'
 
 
 # employee models
@@ -237,4 +204,36 @@ class Service(models.Model):
         verbose_name_plural='7. Service'
 
 
+# soceity work models
 
+class Soceity_work(models.Model):
+    person_name=models.CharField(max_length=400)
+    person_photo=models.ImageField(upload_to="web_photos",blank=True)
+    person_post=models.CharField(max_length=400)
+    company_name=models.CharField(max_length=400)
+    company_photo=models.ImageField(upload_to="web_photos",blank=True)
+    work_designation=models.CharField(max_length=400)
+    work_description=models.CharField(max_length=800)
+    address=models.CharField(max_length=400)
+    end_of_work_date=models.DateField()
+    rating=models.IntegerField(default=4)
+
+    class Meta:
+        verbose_name_plural='10. Soceity'
+
+
+
+# term and policy models
+
+class Term_policy(models.Model):
+    condition_use=models.CharField(max_length=1000)
+    privacy_policy=models.CharField(max_length=1000)
+    age_restriction=models.CharField(max_length=1000)
+    intellectual_propertye=models.CharField(max_length=1000)
+    user_accounts=models.CharField(max_length=1000)
+    disputes=models.CharField(max_length=1000)
+    indemnification=models.CharField(max_length=1000)
+    limitation_on_liability=models.CharField(max_length=1000)
+
+    class Meta:
+        verbose_name_plural='11. Policy'
