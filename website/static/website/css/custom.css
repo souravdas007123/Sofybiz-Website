@@ -146,7 +146,7 @@ label {
 
 .left_landing {
     /*background-color: #282828;*/
-    width: 35%;
+    width: 30%;
     height: 750px;
     margin-left: 80px;
 
@@ -184,6 +184,7 @@ label {
     display: flex;
     align-items: center;
     color: white;
+    gap:13px;
 }
 
 .logo h4 {
@@ -316,6 +317,14 @@ label {
     object-fit: cover;  /* Make images fill the container without distortion */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;  /* Apply smooth transition */
 }
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
 .right_landing_img img {
     width: 100%;
     height: 100%;
@@ -580,35 +589,44 @@ input:focus,input:valid{
 .table_row{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-
-
-}
-.tablewidth {
-    width: 80%;
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-    background-color: var(--theame1);
-}
-th{
-    color: var(--theame2);
-}
-td{
-    color: white;
-}
-th,td{
-    border: 1px solid rgb(255, 255, 255);
-    padding: 8px 5px;
-    font-family: p;
-    font-size:12px;
-    word-wrap: break-word;
-}
-.table_wrapper {
-    display: flex;
-    /* flex-direction: column; */
     justify-content: center;
-    align-items: center;
+}
+.table-container{
+    padding:0 10%;
+    margin:40px auto 0;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: p;
+}
+.table thead{
+   background-color:var(--theame2);
+}
+.table thead tr th{
+    padding: 14px 5px;
+    border: 1px solid #dee2e685;
+}
+.table thead tr{
+    font-size: 12px;
+    font-weight:medium;
+    letter-spacing: 0.35px;
+    color: #000000;
+    opacity: 1;
+    font-weight: 600;
+    padding: 12px;
+    vertical-align: top;
+    border: 1px solid #dee2e685;
+}
+.table tbody tr td{
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    font-weight: normal;
+    color: #f1f1f1;
+    background-color: var(--theame1);
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dee2e685;
 }
 .search_items{
     display: flex;
@@ -752,6 +770,14 @@ option{
     width: 550px;
     /*background-color: #14A44D;*/
 }
+.images {
+    display: none; /* Hide all images */
+}
+
+.images.active {
+    display: block; /* Show the image with the active class */
+}
+
 
 .border {
     border: 2px solid var(--theame2);

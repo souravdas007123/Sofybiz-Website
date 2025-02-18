@@ -1,0 +1,8 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+{% block title %}My Admin Panel{% endblock %}
+
+{% block extrahead %}
+    <link rel="icon" href="{% static 'myapp/images/favicon.ico' %}" type="image/x-icon">
+    {{ block.super }}
+{% endblock %}

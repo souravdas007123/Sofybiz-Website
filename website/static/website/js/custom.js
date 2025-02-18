@@ -204,61 +204,34 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 // Landing image slider function for sliding images through button click
 
-let currentImageIndex = 0;
-const pics = document.querySelectorAll('.screen');
-const totalImages = pics.length;
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.screen');
+    const totalImages = images.length;
+    console.log(images)
 
-console.log(pics)
-// Show the first image initially
-pics[currentImageIndex].style.display = 'block';
+    // Show the first image initially
+    images[currentIndex].classList.add('active');
 
-document.getElementById('nextBtn').addEventListener('click', () => {
-    showImage(currentImageIndex + 1);
-    console.log("clicked")
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        changeImage(currentIndex + 1);
+        console.log("left-clicked")
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        changeImage(currentIndex - 1);
+        console.log("right-clicked")
+    });
+
+    function changeImage(index) {
+        // Remove 'active' class from the current image
+        images[currentIndex].classList.remove('active');
+
+        // Update the index, looping around if necessary
+        currentIndex = (index + totalImages) % totalImages;
+
+        // Add 'active' class to the new image
+        images[currentIndex].classList.add('active');
+    }
 });
 
-document.getElementById('prevBtn').addEventListener('click', () => {
-    showImage(currentImageIndex - 1);
-    console.log("clicked again")
-});
-
-function showImage(index) {
-    // Hide the current image
-    pics[currentImageIndex].style.display = 'none';
-
-    // Adjust the new index, looping around
-    currentImageIndex = (index + totalImages) % totalImages;
-
-    // Show the new image
-    pics[currentImageIndex].style.display = 'block';
-}
-
-
-// Project image slider function for sliding images through button click
-
-// let Index = 0;
-// const slides = document.querySelectorAll('.images');
-// const total = slides.length;
-
-// console.log(slides)
-// // Show the first image initially
-// slides[Index].style.display = 'block';
-
-// document.getElementById('change-2').addEventListener('click', () => {
-//     showImage(Index + 1);
-// });
-
-// document.getElementById('change-1').addEventListener('click', () => {
-//     showImage(Index - 1);
-// });
-
-// function showImage(index) {
-//     // Hide the current image
-//     slides[Index].style.display = 'none';
-
-//     // Adjust the new index, looping around
-//     Index = (index + total) % total;
-
-//     // Show the new image
-//     slides[Index].style.display = 'block';
-// }

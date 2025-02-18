@@ -172,6 +172,13 @@
             font-size: 35px;
             padding: 10px;
             }
+       .logo h4 {
+             font-size: 13px;
+
+        }
+        .logo {
+            gap:15px;
+        }
     /*********************** contact part *********************/
        .contact{
             /*height: 100dvh;*/
@@ -294,7 +301,7 @@
         /*border:none;*/
     }
     .form_box{
-        padding:15px 0;
+        padding:15px 10px;
     }
     .form_value{
         width: 100%;
@@ -305,7 +312,7 @@
         left: 40px;
     }
     .input_box input{
-        width:100%;
+        width:80%;
     }
     .button{
         margin:20px 10px;
@@ -313,6 +320,7 @@
     .label_field {
         padding:0 15px;
     }
+
     /*********************** service  part *********************/
         .service{
             /*height: 100dvh;*/
@@ -370,47 +378,67 @@
             padding: 0 15px;
         }
     /*********************** service innerhtml part *********************/
-    .table_section,.table_row{
-        width:100%;
-        padding:10px 5px;
-        margin:0;
-    }
-    /*tr{*/
-    /*    border:1px solid black;*/
-    /*    text-align:left;*/
+    /*.table_section{*/
+    /*    width:100%;*/
+    /*    padding:10px 5px;*/
+    /*    margin:0;*/
+    /*    overflow:auto;*/
     /*}*/
-    /*th{*/
-    /*    font-size:10px;*/
-    /*}*/
-    /*td{*/
-    /*   font-size:10px;*/
-    /*}*/
-    th{
-        color: var(--theame2);
-    }
-    td{
-        color: white;
-    }
-    th,td{
-        border: 1px solid rgb(255, 255, 255);
-        padding: 8px 5px;
-        font-size:12px;
-    }
-    .tablewidth{
-        width:100%;
-    }
-    .table_wrapper{
-        width:100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .float_home{
         margin: 12px;
         border-radius: 5px;
         font-family: p;
         font-size:12px;
-}
+    }
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody,.table tr,.table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+        border: 1px solid var(--theame2);
+    }
+    .table tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        word-wrap: break-word;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 2%;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+        color:var(--theame2);
+    }
+    .table thead tr{
+        font-size: 12px;
+        /*font-weight:medium;*/
+        /*letter-spacing: 0.35px;*/
+        /*color: #000000;*/
+        /*opacity: 1;*/
+        /*font-weight: 600;*/
+        /*padding: 12px;*/
+        /*vertical-align: top;*/
+        border: none;
+    }
+    .table tbody tr td{
+        font-size: 12px;
+        /*letter-spacing: 0.35px;*/
+        /*font-weight: normal;*/
+        /*color: #f1f1f1;*/
+        /*background-color: var(--theame1);*/
+        /*padding: 8px;*/
+        /*text-align: center;*/
+        border: none;
+    }
     /*********************** Our company in numbers part *********************/
         .company_in_number{
             /*height: 100dvh;*/
@@ -615,10 +643,10 @@
             /*background-color: var(--theame2);*/
     }
           .row-2{
-             grid-row:span 2;
+             grid-row:span 1;
     }
           .coloum-2{
-             grid-column:span 0;
+             grid-column:span 1;
     }
 
     /*********************** Our teams member part *********************/
@@ -640,24 +668,24 @@
     }
 
     .member_gallery1{
-        width: 100%;
-        aspect-ratio: 1/1;
-        /*height: 40%;*/
+        width: 160%;
+        /*aspect-ratio: 1.2/1;*/
+        height: 40%;
         display: flex;
         flex-direction:column;
         justify-content: center;
         align-items: center;
         padding:10px 0;
     }
-    .member_gallery2{
-        width: 100%;
-        aspect-ratio: 1/1;
-        display: flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items: center;
-        padding:10px 0;
-    }
+    /*.member_gallery2{*/
+    /*    width: 100%;*/
+    /*    aspect-ratio: 1/1;*/
+    /*    display: flex;*/
+    /*    flex-direction:column;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*    padding:10px 0;*/
+    /*}*/
     .member_img{
         width: 100%;
         display: flex;
@@ -705,7 +733,7 @@
         justify-content: center;
         align-items: center;
         /*background-color: bisque;*/
-        padding:10px 0;
+        /*padding:10px 0;*/
     }
     .textimorial_details_wrraper{
         position: absolute;
@@ -725,21 +753,21 @@
         /*aspect-ratio:1/1;*/
     /*}*/
     .textimorial_details{
-        width: 80%;
-        aspect-ratio:1/0.4;
+        /*width: 90%;*/
+        /*aspect-ratio:1/0.4;*/
         /*height: 200px;*/
         background-color:var(--theame1);
         padding:15px;
         border-radius: 10px;
     }
     .textimorial_details_img{
-        width:30%;
-        height:30%;
+        width:20%;
+        height:20%;
         position: relative;
-        top: 12%;
+        top: 5%;
         border-radius: 50%;
         z-index: 10;
-        border: 3px solid var(--theame2);
+        border: 2px solid var(--theame2);
 }
     .textimorial_details_wrraper img{
         width:100%;
@@ -768,7 +796,7 @@
         justify-content: center;
         align-items: center;
         /*background-color: bisque;*/
-        padding:50px 20px;
+        /*padding:50px 20px;*/
     }
     .left_achive{
         /*background-color: red;*/
@@ -811,39 +839,41 @@
         align-items: center;
     }
     .achive_project{
-        width: 100px;
-        /*aspect-ratio:1/1;*/
+        width: 110px;
+        height:110px;
+        /*aspect-ratio:1/0.5;*/
         background-color:var(--theame1);
         color: var(--theame2);
         text-align: center;
-        padding: 20px 0px;
+        padding: 12px 0px;
         margin:0 10px;
     }
     .achive_client{
-        width: 100px;
-        /*aspect-ratio:1/1;*/
+        width: 110px;
+        height:110px;
+        /*aspect-ratio:1/0.5;*/
         background-color: var(--theame2);
         color: var(--theame1);
         text-align: center;
-        padding: 20px 0px;
+        padding: 12px 0px;
         margin:0 10px;
     }
     .achive_our_team{
-        width: 100px;
-        aspect-ratio:1/1;
+        width: 110px;
+        height:110px;
         background-color:var(--theame1);
         color: var(--theame2);
         text-align: center;
-        padding: 20px 0px;
+        padding: 12px 0px;
         margin:0 10px;
     }
     .achive_awards{
-        width: 100px;
-        aspect-ratio:1/1;
+        width: 110px;
+        height:110px;
         background-color: var(--theame2);
         color: var(--theame1);
         text-align: center;
-        padding: 20px 0px;
+        padding: 12px 0px;
         margin:0 10px;
     }
     .achive_goal_one{
@@ -868,6 +898,39 @@
         object-fit:cover;
         /*height: 100%;*/
     }
+         .achive_project h3 {
+            padding: 8px 0;
+        }
+
+        .achive_project p {
+            font-size: 22px;
+        }
+
+        .achive_client h3 {
+            padding: 8px 0;
+        }
+
+        .achive_client p {
+            font-size: 22px;
+        }
+        .achive_our_team h3 {
+            padding: 8px 0;
+        }
+
+        .achive_our_team p {
+            font-size: 22px;
+        }
+
+        .achive_awards h3 {
+            padding: 8px 0;
+        }
+
+        .achive_awards p {
+            font-size: 22px;
+        }
+       .achivement_wrraper i{
+           font-size:16px;
+       }
     /*********************** about part *********************/
         .about{
             /*height: 100dvh;*/
@@ -955,8 +1018,12 @@
         .footer_coloum{
             /*height: 100%;*/
             width: 100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:start;
+            gap:5px;
             margin: 0;
-            padding: 10px 0;
+            padding: 5px 0;
             /*background-color: #3cb371;*/
             /*justify-content:center;*/
             /*align-items: center;*/

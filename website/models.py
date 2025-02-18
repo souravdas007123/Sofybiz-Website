@@ -26,7 +26,7 @@ class Section(models.Model):
     about_para=models.CharField(max_length=200)
 
     class Meta:
-        verbose_name_plural='4. Section'
+        verbose_name_plural='Section'
 
 
 # query models
@@ -40,7 +40,7 @@ class Query_data(models.Model):
     queries=models.CharField(max_length=1000)
 
     class Meta:
-        verbose_name_plural='3. Query'
+        verbose_name_plural='Query'
 
 
 # team models
@@ -76,7 +76,7 @@ class Team(models.Model):
     engineer_google_link=models.URLField(blank=True)
 
     class Meta:
-        verbose_name_plural='6. Team'
+        verbose_name_plural='Team'
 
 
 # employee models
@@ -89,7 +89,7 @@ class Employee(models.Model):
     employee_photo=models.ImageField(upload_to="web_photos",blank=True)
 
     class Meta:
-        verbose_name_plural='2. Employee'
+        verbose_name_plural='Employee'
 
 # gallery models
 
@@ -105,7 +105,7 @@ class Gallery(models.Model):
     drawingroom_photo=models.ImageField(upload_to="web_photos")
 
     class Meta:
-        verbose_name_plural='5. Gallery'
+        verbose_name_plural='Gallery'
 
 
 # profile models
@@ -129,7 +129,7 @@ class Profile(models.Model):
     award=models.IntegerField(blank=True)
 
     class Meta:
-        verbose_name_plural='1. Profile'
+        verbose_name_plural='Profile'
 
 
 # achivement models  #
@@ -139,7 +139,7 @@ class Achivement(models.Model):
     achivement_img_two=models.ImageField(upload_to="web_photos")
 
     class Meta:
-        verbose_name_plural='8. Achivement'
+        verbose_name_plural='Achivement'
 
 
 # abouts models
@@ -156,7 +156,7 @@ class About(models.Model):
     dreams_img=models.ImageField(upload_to="web_photos")
 
     class Meta:
-        verbose_name_plural='9. About'
+        verbose_name_plural='About'
 
 
 # service work models
@@ -201,7 +201,7 @@ class Service(models.Model):
     remarks=models.CharField(max_length=400)
 
     class Meta:
-        verbose_name_plural='7. Service'
+        verbose_name_plural='Service'
 
 
 # soceity work models
@@ -219,7 +219,7 @@ class Soceity_work(models.Model):
     rating=models.IntegerField(default=4)
 
     class Meta:
-        verbose_name_plural='10. Soceity'
+        verbose_name_plural='Soceity'
 
 
 
@@ -236,4 +236,4 @@ class Term_policy(models.Model):
     limitation_on_liability=models.CharField(max_length=1000)
 
     class Meta:
-        verbose_name_plural='11. Policy'
+        verbose_name_plural='Policy'

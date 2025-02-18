@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Put your description here.">
 
-    <link rel="icon" href="{% static 'website/img/logo.png'%}" type="image/x-icon">
+    <link rel="icon" href="{% static 'website/img/logo.webp'%}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -76,11 +76,9 @@
                 </div>
                 <div class="right_landing" id="right">
                     <div class="right_landing_img">
-                        <img src="{% static 'website/img/landing.webp' %}" alt="Image1" class="screen"
-                            style="display:block;">
+                        <img src="{% static 'website/img/landing.webp' %}" alt="Image1" class="screen active">
                         {% for soceity_works in soceity_work %}
-                        <img src="{{soceity_works.company_photo.url}}" alt="Image1" class="screen"
-                            style="display:none;">
+                        <img src="{{soceity_works.company_photo.url}}" alt="Image1" class="screen">
                         {% endfor %}
                     </div>
                     <div class="right_strap">
@@ -335,31 +333,35 @@
             </div>
             <div class="border"></div>
             <div class="project_wrapper wrraper_padding">
-                <div class="project_gallery_data" id="gallery_data">
-                    {% for soceity_work_counts in soceity_work_count %}
-                    <h3 class="project_gallery_data_subhead">{{soceity_work_counts.end_of_work_date}} |
-                        {{soceity_work_counts.work_designation|upper}}</h3>
-                    <h4 class="project_gallery_data_head">{{soceity_work_counts.company_name|capfirst}} ,
-                        {{soceity_work_counts.address|capfirst}} OK</h4>
-                    <p class="project_gallery_data_para">{{soceity_work_counts.work_description}}</p>
-                    {% endfor %}
+                <div class="project_gallery_data" id="gallery_data" class="images">
+                    <!-- Placeholder content, will be updated by JavaScript -->
+                    <h3 class="project_gallery_data_subhead" id="data-subhead"></h3>
+                    <h4 class="project_gallery_data_head" id="data-head"></h4>
+                    <p class="project_gallery_data_para" id="data-para"></p>
                 </div>
+
                 <div class="project_gallery">
-                    <img src="{% static 'website/img/project.webp' %}" alt="project" class="lproject"
-                        style="display:block" ;>
+                    {% for soceity_works in soceity_work %}
+                        <img src="{{soceity_works.company_photo.url}}" alt="project" class="images" id="image"
+                             data-subhead="{{soceity_works.end_of_work_date}} | {{soceity_works.work_designation|upper}}"
+                             data-head="{{soceity_works.company_name|capfirst}}, {{soceity_works.address|capfirst}} OK"
+                             data-para="{{soceity_works.work_description}}">
+                    {% endfor %}
                     <div class="search" id="src">
                         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
                     </div>
                 </div>
+
                 <div class="project_gallery_arrow">
-                    <div class="arrow_left arrow_circle" id="lchange1">
+                    <div class="arrow_left arrow_circle" id="change-1">
                         <i class="fa-solid fa-arrow-left fa-lg"></i>
                     </div>
-                    <div class="arrow_right arrow_circle" id="lchange2">
+                    <div class="arrow_right arrow_circle" id="change-2">
                         <i class="fa-solid fa-arrow-right fa-lg"></i>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <!--------------------------------- gallery part ---------------------------->
@@ -418,8 +420,8 @@
                             <img src="{{teams.designer_photo.url}}" alt="ceo" class="member_photos">
                         </div>
                         <div class="gallery_name">
-                            <h3>{{teams.designer_name}}</h3>
-                            <p>{{teams.designer_designation}}</p>
+                            <h3>{{teams.founder_name}}</h3>
+                            <p>{{teams.founder_designation}}</p>
                             {% endfor %}
                             <div class="member_icon_wrapper">
                                 {% for teams in team %}
@@ -454,8 +456,8 @@
                             <img src="{{teams.founder_photo.url}}" alt="designer" class="member_photos">
                         </div>
                         <div class="gallery_name">
-                            <h3>{{teams.founder_name}}</h3>
-                            <p>{{teams.founder_designation}}</p>
+                            <h3>{{teams.designer_name}}</h3>
+                             <p>{{teams.designer_designation}}</p>
                             {% endfor %}
                             <div class="member_icon_wrapper">
                                 {% for teams in team %}
@@ -900,7 +902,7 @@
     </div>
 
     <script src="{% static 'website/js/custom.js' %}"></script>
-    {% comment %} <script src="{% static 'website/js/project_img_btn.js' %}"></script> {% endcomment %}
+    <script src="{% static 'website/js/slider.js' %}"></script>
 
 
 </body>
