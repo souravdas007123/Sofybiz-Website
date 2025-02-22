@@ -6,27 +6,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Put your description here." />
-    <link rel="icon" href="{% static 'website/img/logo.webp'%}" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="icon" href="{% static 'website/img/fav-icon.webp'%}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" />
-    <link
-      rel="stylesheet"
-      href="{% static 'website/css/media_768_1024.css' %}"
-      as="style"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'website/css/media_320_767.css' %}"
-      as="style"
-    />
 
-    <title>Construction Work</title>
+    <title>Lighting Work</title>
   </head>
   <body class="service_body">
     <div class="switch_btn">
@@ -34,7 +20,7 @@
         <a href="{% url 'constructionservice' %}" class="float_home"> Contruction</a>
         <a href="{% url 'interiorservice' %}" class="float_home"> Interior</a>
     </div>
-    {% comment %} <a href="{% url 'home' %}" class="float_home"> Back to Home</a> {% endcomment %}
+
     <section class="table_section">
         <div class="search_items">
           <form action="" method="POST">
@@ -56,8 +42,7 @@
             </select>
             <input type="submit" value="Fliter" class="filter_btn" />
             <a href="{% url 'constructionservice' %}" class="float_reload"
-              ><i class="fa-solid fa-rotate fa-spin fa-lg"></i
-            ></a>
+              ><ion-icon name="refresh-outline"></ion-icon></a>
           </form>
         </div>
         <div class="table-container">
@@ -95,5 +80,7 @@
         </table>
          </div>
     </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
   </body>
 </html>
