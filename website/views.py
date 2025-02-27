@@ -41,7 +41,7 @@ def kitchen(request):
     gallerys=Gallery.objects.all().order_by('-id')
     return render(request,'website/kitchen.html',{'gallerys':gallerys})
 
-def living(request):
+def paint(request):
     gallerys=Gallery.objects.all().order_by('-id')
     return render(request,'website/living.html',{'gallerys':gallerys})
 
@@ -53,11 +53,11 @@ def washroom(request):
     gallerys=Gallery.objects.all().order_by('-id')
     return render(request,'website/washroom.html',{'gallerys':gallerys})
 
-def drawingroom(request):
+def plywood(request):
     gallerys=Gallery.objects.all().order_by('-id')
     return render(request,'website/drawingroom.html',{'gallerys':gallerys})
 
-def floor(request):
+def tiles(request):
     gallerys=Gallery.objects.all().order_by('-id')
     return render(request,'website/floor.html',{'gallerys':gallerys})
 

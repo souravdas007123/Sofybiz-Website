@@ -8,15 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Put your description here.">
 
-    <link rel="icon" href="{% static 'website/img/favicon.png'%}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{% static 'website/img/fav-icon.webp'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" as="style">
-    <link rel="stylesheet" href="{% static 'website/css/media_320_767.css' %}" as="style">
-    <link rel="stylesheet" href="{% static 'website/css/media_768_1024.css' %}" as="style">
 
-    <title>Sofybiz Solution Pvt Ltd</title>
+    <title>Falseceiling</title>
 
 </head>
 
@@ -25,14 +20,14 @@
         <div class="image_wrrapper_block">
             {% for gallery in gallerys %}
             <div class="image_block image_gap">
-                <img src="{{gallery.falseceilling_photo.url}}" alt="falseceiling" class="bathroom_img img_1">
+                <img src="{{gallery.falseceilling_photo.url}}" alt="falseceiling" class="img_1">
             </div>
             {% endfor %}
         </div>
     </div>
 
     <script src="{% static 'website/js/custom.js' %}"></script>
-    
+
 </body>
 
 </html>

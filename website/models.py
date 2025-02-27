@@ -95,14 +95,14 @@ class Employee(models.Model):
 
 
 class Gallery(models.Model):
-    falseceilling_photo=models.ImageField(upload_to="web_photos")
-    floor_photo=models.ImageField(upload_to="web_photos")
-    wallpannel_photo=models.ImageField(upload_to="web_photos")
-    washroom_photo=models.ImageField(upload_to="web_photos")
-    bedroom_photo=models.ImageField(upload_to="web_photos")
-    livingroom_photo=models.ImageField(upload_to="web_photos")
-    kitchen_photo=models.ImageField(upload_to="web_photos")
-    drawingroom_photo=models.ImageField(upload_to="web_photos")
+    falseceilling_photo=models.ImageField(upload_to="web_photos",blank=True)
+    tiles_photo=models.ImageField(upload_to="web_photos",blank=True)
+    wallpannel_photo=models.ImageField(upload_to="web_photos",blank=True)
+    washroom_photo=models.ImageField(upload_to="web_photos",blank=True)
+    bedroom_photo=models.ImageField(upload_to="web_photos",blank=True)
+    paint_photo=models.ImageField(upload_to="web_photos",blank=True)
+    kitchen_photo=models.ImageField(upload_to="web_photos",blank=True)
+    plywood_photo=models.ImageField(upload_to="web_photos",blank=True)
 
     class Meta:
         verbose_name_plural='Gallery'

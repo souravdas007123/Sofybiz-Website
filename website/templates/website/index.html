@@ -7,15 +7,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Interior Design Website">
-
     <link rel="icon" href="{% static 'website/img/fav-icon.webp'%}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" as="style"  >
-    <!--<link rel="preload" href="/static/website/img/landing.webp" as="image" />-->
+    <link rel="preload" href="/static/website/img/landing.webp" as="image" />
 
     <title>Sofybiz Solution Pvt Ltd</title>
+
 
 </head>
 
@@ -31,7 +31,7 @@
                     <div class="landing_logo">
                         <div class="logo">
                             <div class="logocont">
-                                <img src="{{profiles.company_logo.url}}" alt="sofybiz-logo" srcset="" preload=auto>
+                                <img src="{{profiles.company_logo.url}}" alt="sofybiz-logo" srcset="" width="40" height="40">
                             </div>
                             <h4>{{profiles.company_name|upper}}</h4>
                         </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="right_landing" id="right">
                     <div class="right_landing_img">
-                        <img src="{% static 'website/img/landing.webp' %}" alt="Image1" class="screen active">
+                        <img src="{% static 'website/img/landing.webp' %}" alt="Image1" class="screen active" >
                         {% for soceity_works in soceity_work %}
                         <img src="{{soceity_works.company_photo.url}}" alt="Image1" class="screen" loading="lazy">
                         {% endfor %}
@@ -176,7 +176,7 @@
             <div class="section_heading">
                 {% for section_heading_paras in section_heading_para %}
                 <p class="section_sub_hreading">{{section_heading_paras.service_para}} </p>
-                <h2><span class="heading_bold">{{section_heading_paras.service_heading}}</h2>
+                <h2>{{section_heading_paras.service_heading}}</h2>
                 {% endfor %}
             </div>
             <div class="service_wrapper wrraper_padding">
@@ -195,10 +195,10 @@
                                 <li>Exterior Wall</li>
                                 <li>Roof</li>
                                 <li>Ceiling</li>
-                                <li>Tiles,Marble</li>
+                                <li>Damp Proof </li>
                             </ul>
                         </div>
-                        <a aria-label="construction" href="{% url 'constructionservice' %}" title="construction">
+                        <a aria-label="construction" href="{% url 'constructionservice' %}" title="construction" target="_blank">
                             <div class="service_btn">
                                 <p>Construction Services</p>
                                 <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -222,7 +222,7 @@
                                 <li>Banking Work Station</li>
                             </ul>
                         </div>
-                        <a aria-label="interior" href="{% url 'interiorservice' %}" title="interior">
+                        <a aria-label="interior" href="{% url 'interiorservice' %}" title="interior" target="_blank">
                             <div class="service_btn">
                                 <p>Interior Solutions</p>
                                 <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -246,7 +246,7 @@
                                 <li>Pixel Light</li>
                             </ul>
                         </div>
-                        <a aria-label="lighting" href="{% url 'lightingservice' %}" title="lighting">
+                        <a aria-label="lighting" href="{% url 'lightingservice' %}" title="lighting" target="_blank">
                             <div class="service_btn">
                                 <p>Electric Work</p>
                                 <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -263,7 +263,7 @@
             <div class="section_heading">
                 {% for section_heading_paras in section_heading_para %}
                 <p class="section_sub_hreading">{{section_heading_paras.milestone_para}}</p>
-                <h2><span class="heading_bold">{{section_heading_paras.milestone_heading}}</h2>
+                <h2>{{section_heading_paras.milestone_heading}}</h2>
                 {% endfor %}
             </div>
             <div class="company_wrapper wrraper_padding">
@@ -369,7 +369,7 @@
             <div class="section_heading">
                 {% for section_heading_paras in section_heading_para %}
                 <p class="section_sub_hreading">{{section_heading_paras.gallery_para}}</p>
-                <h2><span class="heading_bold">{{section_heading_paras.gallery_heading}}</h2>
+                <h2>{{section_heading_paras.gallery_heading}}</h2>
                 {% endfor %}
             </div>
             <div class="gallery_wrapper wrraper_padding">
@@ -377,8 +377,8 @@
                 <a href="{% url 'kitchen' %}" class="block box box-1 row-2">
                     <img src="{{gallerys.kitchen_photo.url}}" alt="kitchen" class="img_1" loading="lazy">
                 </a>
-                <a href="{% url 'living' %}" class="block box box-2">
-                    <img src="{{gallerys.livingroom_photo.url}}" alt="livingroom" class="img_1" loading="lazy">
+                <a href="{% url 'paint' %}" class="block box box-2">
+                    <img src="{{gallerys.paint_photo.url}}" alt="paint" class="img_1" loading="lazy">
                 </a>
                 <a href="{% url 'bedroom' %}" class="block box box-3 row-2">
                     <img src="{{gallerys.bedroom_photo.url}}" alt="bedroom" class="img_1" loading="lazy">
@@ -386,14 +386,14 @@
                 <a href="{% url 'washroom' %}" class="block box box-4">
                     <img src="{{gallerys.washroom_photo.url}}" alt="washroom" class="img_1" loading="lazy">
                 </a>
-                <a href="{% url 'drawingroom' %}" class="block box box-5 row-2">
-                    <img src="{{gallerys.drawingroom_photo.url}}" alt="drawingroom" class="img_1" loading="lazy">
+                <a href="{% url 'plywood' %}" class="block box box-5 row-2">
+                    <img src="{{gallerys.plywood_photo.url}}" alt="plywood" class="img_1" loading="lazy">
                 </a>
                 <a href="{% url 'falseceiling' %}" class="block box box-6 row-2">
                     <img src="{{gallerys.falseceilling_photo.url}}" alt="falseceiling" class="img_1" loading="lazy">
                 </a>
-                <a href="{% url 'floor' %}" class="block box box-7">
-                    <img src="{{gallerys.floor_photo.url}}" alt="floor" class="img_1" loading="lazy">
+                <a href="{% url 'tiles' %}" class="block box box-7">
+                    <img src="{{gallerys.tiles_photo.url}}" alt="tiles" class="img_1" loading="lazy">
                 </a>
                 <a href="{% url 'wallpannel' %}" class="block box box-8">
                     <img src="{{gallerys.wallpannel_photo.url}}" alt="wallpannel" class="img_1" loading="lazy">
@@ -687,13 +687,13 @@
                         <p>{{about.vision}}</p>
                     </div>
                     <div class="about_photos">
-                        <img src="{{about.vision_img.url}}" alt="vision" class="fade-image" loading="lazy">
+                        <img src="{{about.vision_img.url}}" alt="vision" class="fade-image" loading="lazy" width="250" height="250">
                     </div>
 
                 </div>
                 <div class="about_one">
                     <div class="about_photos">
-                        <img src="{{about.inspire_img.url}}" alt="creative" class="fade-image" loading="lazy">
+                        <img src="{{about.inspire_img.url}}" alt="creative" class="fade-image" loading="lazy" width="250" height="250">
                     </div>
                     <div class="about_heading">
                         <h3>{{about.inspire_head}}</h3>
@@ -707,7 +707,7 @@
                         <p>{{about.dreams}}</p>
                     </div>
                     <div class="about_photos">
-                        <img src="{{about.dreams_img.url}}" alt="dreams" class="fade-image" loading="lazy">
+                        <img src="{{about.dreams_img.url}}" alt="dreams" class="fade-image" loading="lazy" width="250" height="250">
                     </div>
 
                 </div>
@@ -897,10 +897,10 @@
             <p><u>© 2024 Top Project Privacy Policy</u></p>
         </a>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
-    <script src="{% static 'website/js/custom.js' %}" defer></script>
-    <script src="{% static 'website/js/slider.js' %}" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'website/js/custom.js' %}" ></script>
+    <script src="{% static 'website/js/slider.js' %}" ></script>
 
 
 </body>

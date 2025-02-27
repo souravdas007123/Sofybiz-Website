@@ -47,7 +47,7 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
-    list_display=['id','falseceilling_photo','floor_photo','wallpannel_photo','washroom_photo','bedroom_photo','livingroom_photo','kitchen_photo','drawingroom_photo']
+    list_display=['id','falseceilling_photo','tiles_photo','wallpannel_photo','washroom_photo','bedroom_photo','paint_photo','kitchen_photo','plywood_photo']
 
 
 # profile models here.
